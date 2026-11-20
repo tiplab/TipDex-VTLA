@@ -51,6 +51,8 @@ This repository provides the official inference example, including model loading
 | Tactile forecast | 364 normalized values per frame, displayed as a 14 × 26 heatmap |
 | Runtime | Local replay, HTTP inference, configuration page, and VASE / TACE / q dashboard |
 
+The heatmap uses SDK register order: `heatmap[r, c] = raw364[26*r + c] / 65535`. Its cells represent register indices, not anatomical regions or calibrated force. Conversion, normalization, and encoder inputs are documented in [the method](docs/METHOD.md#触觉表示与转换).
+
 ## 3. Downloads
 
 | Resource | Contents | Download |
