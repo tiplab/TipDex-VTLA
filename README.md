@@ -51,8 +51,6 @@ This repository provides the official inference example, including model loading
 | Tactile forecast | 364 normalized values per frame, displayed as a 14 × 26 heatmap |
 | Runtime | Local replay, HTTP inference, configuration page, and VASE / TACE / q dashboard |
 
-The heatmap uses SDK register order: `heatmap[r, c] = raw364[26*r + c] / 65535`. Its cells represent register indices, not anatomical regions or calibrated force. See [tactile representation](docs/TACTILE_REPRESENTATION.md) for conversion, normalization, and encoder inputs, and [method correspondence](docs/METHOD.md) for the inference definitions.
-
 ## 3. Downloads
 
 | Resource | Contents | Download |
@@ -108,7 +106,7 @@ CUDA_VISIBLE_DEVICES=0 tipdex serve \
 After model loading and warm-up, open:
 
 - **Dashboard:** <http://127.0.0.1:8116/dashboard> — VASE, TACE, final `q`, verification status, and predicted tactile heatmaps.
-- **Configuration:** <http://127.0.0.1:8116/config> — inspect presets and export `inference.json`. Pass the exported file with `--config inference.json`.
+- **Configuration:** <http://127.0.0.1:8116/config> — edit inference settings and export `inference.json`. Pass the exported file with `--config inference.json`.
 
 In another terminal with the same environment and `MODEL_DIR`, send the bundled example through the HTTP interface:
 
@@ -120,21 +118,12 @@ python scripts/check_http.py \
 
 This client also uses simulated execution feedback. For robot integration, connect the driver using the [deployment and execution-feedback protocol](docs/DEPLOYMENT.md). Stop the foreground service with `Ctrl+C`.
 
-### 4.5 Configuration and documentation
-
-| Preset | Visual baseline | Forecast horizon | Residual bound |
-| --- | --- | ---: | ---: |
-| `paper` | `q_v` | 30 frames | 0.1 |
-| `egg` | `0.6 + 0.4 * q_v` | 5 frames | 0.01 |
-
-Select a preset with `--config paper` or `--config egg`. Both cap the tactile score decrement at 0.1. The score fusion, gate, tactile fusion, and other parameters are described in [configuration](docs/CONFIGURATION.md).
+### 4.5 Documentation
 
 | Documentation | Contents |
 | --- | --- |
 | [Deployment](docs/DEPLOYMENT.md) | Input schemas, timestamps, driver acknowledgements, action commits, and Python integration |
-| [Configuration](docs/CONFIGURATION.md) | Presets, score fusion, and parameter definitions |
-| [Tactile representation](docs/TACTILE_REPRESENTATION.md) | Raw registers, heatmap conversion, and normalization |
-| [Method correspondence](docs/METHOD.md) | Paper definitions and implementation locations |
+| [Method](docs/METHOD.md) | Paper definitions, implementation details, and configuration |
 | [Inference validation](docs/VALIDATION.md) | Automated checks, real-weight replay, and HTTP validation |
 | [Model releases](docs/MODEL_RELEASE.md) | Bundle structure, integrity checks, and fixed-revision loading |
 

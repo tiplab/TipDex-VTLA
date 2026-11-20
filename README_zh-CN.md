@@ -51,8 +51,6 @@
 | 触觉预测 | 每帧 364 个归一化数值，显示为 14 × 26 热图 |
 | 运行方式 | 本地回放、HTTP 推理、配置页及 VASE / TACE / q 面板 |
 
-热图按 SDK 寄存器顺序转换：`heatmap[r, c] = raw364[26*r + c] / 65535`。像素位置表示寄存器序号，不表示解剖区域或已标定的力。完整转换、归一化和编码器输入见[触觉表示](docs/TACTILE_REPRESENTATION.md)，推理定义见[方法对应](docs/METHOD.md)。
-
 ## 3. 下载
 
 | 资源 | 内容 | 下载 |
@@ -108,7 +106,7 @@ CUDA_VISIBLE_DEVICES=0 tipdex serve \
 模型加载与预热完成后访问：
 
 - **面板：** <http://127.0.0.1:8116/dashboard>，展示 VASE、TACE、最终 `q`、核验状态及触觉预测热图。
-- **配置页：** <http://127.0.0.1:8116/config>，查看预设并导出 `inference.json`，启动时通过 `--config inference.json` 加载。
+- **配置页：** <http://127.0.0.1:8116/config>，调整推理参数并导出 `inference.json`，启动时通过 `--config inference.json` 加载。
 
 在另一个终端激活相同环境并设置相同的 `MODEL_DIR`，通过 HTTP 接口发送包内样例：
 
@@ -120,21 +118,12 @@ python scripts/check_http.py \
 
 该客户端同样使用模拟执行反馈。真机接入请按照[部署与执行反馈协议](docs/DEPLOYMENT.md)对接设备驱动。按 `Ctrl+C` 停止前台模型服务。
 
-### 4.5 配置与文档
-
-| 预设 | 视觉基准 | 预测时域 | 残差上界 |
-| --- | --- | ---: | ---: |
-| `paper` | `q_v` | 30 帧 | 0.1 |
-| `egg` | `0.6 + 0.4 * q_v` | 5 帧 | 0.01 |
-
-通过 `--config paper` 或 `--config egg` 选择预设。两者的触觉扣分上限均为 0.1。分数融合、gate、触觉融合及其他参数见[配置说明](docs/CONFIGURATION.md)。
+### 4.5 文档
 
 | 文档 | 内容 |
 | --- | --- |
 | [部署说明](docs/DEPLOYMENT.md) | 输入格式、时间戳、驱动确认、动作提交和 Python 接入 |
-| [配置说明](docs/CONFIGURATION.md) | 预设、分数融合与参数定义 |
-| [触觉表示](docs/TACTILE_REPRESENTATION.md) | 原始寄存器、热图转换和归一化 |
-| [方法对应](docs/METHOD.md) | 论文定义及其实现位置 |
+| [方法说明](docs/METHOD.md) | 论文定义、实现细节及配置 |
 | [推理验收](docs/VALIDATION.md) | 自动检查、真实权重回放及 HTTP 验证 |
 | [模型发布](docs/MODEL_RELEASE.md) | 模型包结构、完整性检查及固定版本加载 |
 
