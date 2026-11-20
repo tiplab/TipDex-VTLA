@@ -123,7 +123,7 @@ window.PROJECT = {
       "duration": "01:12"
     }
   ],
-  "bibtex": "@unpublished{tipdexvtla,\n  title = {TipDex-VTLA: Learning When to Refine Actions with Touch for Dexterous Manipulation},\n  author = {Ge, Xudi and Liu, Yepeng and Liu, Haifeng and Shi, Enze and Zhang, Liangqi and Xu, Yongchao},\n  note = {Unpublished manuscript}\n}",
+  "bibtex": "@misc{tipdexvtla,\n  title = {{TipDex-VTLA: Learning When to Refine Actions with Touch for Dexterous Manipulation}},\n  author = {Ge, Xudi and Liu, Yepeng and Liu, Haifeng and Shi, Enze and Zhang, Liangqi and Xu, Yongchao},\n  year = {2026},\n  eprint = {2611.25683},\n  archivePrefix = {arXiv},\n  primaryClass = {cs.RO},\n  url = {https://arxiv.org/abs/2611.25683}\n}",
   "realResults": {
     "standard": [
       ["ACT", 0, 30, 20, 25, 18.8],
