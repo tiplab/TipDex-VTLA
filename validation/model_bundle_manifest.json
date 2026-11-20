@@ -1,7 +1,7 @@
 {
   "schema": "tipdex.inference_bundle.v1",
   "checkpoint_step": 9309,
-  "model": "TiP-Dex-EGG",
+  "model": "TipDex-VTLA",
   "files": {
     "LICENSE": {
       "bytes": 11356,
@@ -12,8 +12,8 @@
       "sha256": "3e2c24001f9ef57bf7ec959a3658fbb49cdad113cdf394c264da9d16f9bdd132"
     },
     "README.md": {
-      "bytes": 3775,
-      "sha256": "86da29573a383a28ccde29d042cc0de673c82164498d9089a697c5be2cae6c7c"
+      "bytes": 3782,
+      "sha256": "d8036a9ec81b39ab9e281d44ff82bad874bbe5b1306c0db3c7de6770cf8792ac"
     },
     "TACE/config.json": {
       "bytes": 489,
@@ -31,13 +31,13 @@
       "bytes": 983276,
       "sha256": "fca88ff60773bf2c591b7a08c44956d3a6683b2ffee39b25ff173dfbf6f547f9"
     },
-    "backbone/assets/demo01_egg/norm_stats.json": {
-      "bytes": 3861,
-      "sha256": "ad1430f66bd235cf9f75a378dfd85431a1307ba39596922f5420498fc56318ca"
-    },
     "backbone/assets/fastslow.json": {
       "bytes": 410,
       "sha256": "4747a9bd13a7e3e6b71f8722a95ea0ed9f09afe14ddc44ff40eea062b39f0a78"
+    },
+    "backbone/assets/tipdex/norm_stats.json": {
+      "bytes": 3861,
+      "sha256": "ad1430f66bd235cf9f75a378dfd85431a1307ba39596922f5420498fc56318ca"
     },
     "backbone/config.json": {
       "bytes": 1177,
@@ -99,7 +99,7 @@
       "bytes": 267,
       "sha256": "b7c9351d65514fbcdcb46efb9ce097385b7a586fa2f2da8fb10474f56fcd130d"
     },
-    "example/egg.npz": {
+    "example/observation.npz": {
       "bytes": 173925,
       "sha256": "e5b9ea0e4bcc9497839a656234d78511a72211d586e4facddfdc3816a1af450a"
     },
@@ -115,13 +115,13 @@
       "bytes": 1700339,
       "sha256": "1f7a9c30d4b74bcd0dfce8240547b7fe87084c69a99b0c581e4f4da817c59db8"
     },
-    "inference/TipDex-VTLA-0.2.0.zip": {
-      "bytes": 166657,
-      "sha256": "600a666296643af7d24d569dc0b4ff86d2aa9a2ce661c2f2fb3145a1928ca801"
+    "inference/TipDex-VTLA-0.2.1.zip": {
+      "bytes": 7768698,
+      "sha256": "0c4f4ea9dbf0c7827a3a4a31c5f155046a67819632bbf212c48134a073a1eb6e"
     },
-    "inference/tipdex_vtla-0.2.0-py3-none-any.whl": {
-      "bytes": 133560,
-      "sha256": "9a4ca9f6170e2a7da3f32afeeecb5c2fd810da1a284dbbb079e5009da206a63e"
+    "inference/tipdex_vtla-0.2.1-py3-none-any.whl": {
+      "bytes": 134819,
+      "sha256": "84ef5a8fd827e36b3d4d79c00c74c7b4afa912a3f7c938157e153f0b10a0d745"
     },
     "tokenizer/paligemma_tokenizer.model": {
       "bytes": 4264023,

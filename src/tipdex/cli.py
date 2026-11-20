@@ -11,7 +11,7 @@ def main():
         p.add_argument('--model',required=True,help='Local bundle or Hugging Face repository ID')
         p.add_argument('--revision',help='Hugging Face commit SHA')
         p.add_argument('--offline',action='store_true')
-        p.add_argument('--config',default='paper',help='paper, egg or configuration JSON')
+        p.add_argument('--config',default='paper',help='paper, tipdex or configuration JSON')
         if name=='replay':
             p.add_argument('--output',default='outputs/replay')
             p.add_argument('--stress-error',action='store_true',help='Inject a large error to test the TACE path')

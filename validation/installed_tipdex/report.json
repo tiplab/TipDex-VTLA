@@ -1,6 +1,6 @@
 {
   "model": "9309",
-  "profile": "egg",
+  "profile": "tipdex",
   "actual_weights_sha256": {
     "VASE/weights.npz": "fca88ff60773bf2c591b7a08c44956d3a6683b2ffee39b25ff173dfbf6f547f9",
     "TACE/tace.msgpack": "656d3cb65f379507f93648348a832380b4c5164bdb74030d5e8552333b3ec4ec",
@@ -19,7 +19,7 @@
   "frame_index": 0,
   "error_aggregation": "current_frame_mae_over_364_values",
   "tace_active": true,
-  "max_normalized_action_change_due_to_error": 0.0012067854404449463,
+  "max_normalized_action_change_due_to_error": 0.001217857003211975,
   "protected_action_delta": 0.0,
   "model_action_shape": [
     30,

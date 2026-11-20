@@ -19,7 +19,7 @@
   "frame_index": 0,
   "error_aggregation": "current_frame_mae_over_364_values",
   "tace_active": true,
-  "max_normalized_action_change_due_to_error": 0.005108244717121124,
+  "max_normalized_action_change_due_to_error": 0.005059454590082169,
   "protected_action_delta": 0.0,
   "model_action_shape": [
     30,

@@ -8,8 +8,8 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-3b82f6?style=flat)](https://tiplab.github.io/TipDex-VTLA/)
 [![Paper: arXiv](https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2611.25683)
-[![Weights: TiP-Dex-EGG](https://img.shields.io/badge/Weights-TiP--Dex--EGG-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TiP-Dex-EGG)
-[![Dataset: EGG-TRANSFER](https://img.shields.io/badge/Dataset-EGG--TRANSFER-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER)
+[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TipDex-VTLA)
+[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-Data)
 [![Code License: Apache-2.0](https://img.shields.io/badge/Code_License-Apache--2.0-83a83f?style=flat)](LICENSE)
 [![Python: 3.11](https://img.shields.io/badge/Python-3.11-3776ab?style=flat&logo=python&logoColor=white)](pyproject.toml)
 
@@ -30,7 +30,7 @@
 
 **TipDex-VTLA** 是面向光照变化下灵巧操作的视觉–触觉–语言–动作框架。它估计视觉可靠性，将触觉预测与实时测量进行核验，据此调节执行过程中的动作修正。
 
-本仓库提供官方推理示例，包含模型加载、慢快推理、**VASE**、**TACE** 和实时可靠性面板。**TiP-Dex-EGG** 模型包及配对的 **EGG-TRANSFER** 示范数据集均已发布到 Hugging Face。
+本仓库提供官方推理示例，包含模型加载、慢快推理、**VASE**、**TACE** 和实时可靠性面板。**TipDex-VTLA** 模型包及配对的 **TipDex-Data** 示范数据集均已发布到 Hugging Face。
 
 <p align="center">
   <img src="figures/real-world-highlights.gif" width="800" alt="鸡蛋转移、葡萄夹取、纸巾抽取和绿豆倾倒的真机演示。">
@@ -49,7 +49,7 @@
 - **TACE：执行中的触觉预判与修正。** 融合视觉可靠性与经过核验的触觉误差，对 Action Expert 特征进行有界门控修正。
 - **慢快执行。** 复用缓存上下文和中间流状态，更新可替换、未执行的动作，保留已提交命令和原始执行时间。接受动作更新后，重新生成触觉预测。
 
-| TiP-Dex-EGG 组件 | 说明 |
+| TipDex-VTLA 组件 | 说明 |
 | --- | --- |
 | 策略 | 鸡蛋转移基座，检查点 9309 |
 | 可靠性模块 | 独立的 VASE 与 TACE |
@@ -64,8 +64,8 @@
 
 | 资源 | 内容 | 下载 |
 | --- | --- | --- |
-| **TiP-Dex-EGG** | 策略、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化统计与推理样例 | [Hugging Face 模型](https://huggingface.co/penguin3333333/TiP-Dex-EGG) |
-| **TipDex-VTLAdemo-data_EGG-TRANSFER** | 50 条原始轨迹和 50 条配对 RGB 光照扰动轨迹 | [Hugging Face 数据集](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER) |
+| **TipDex-VTLA** | 策略、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化统计与推理样例 | [Hugging Face 模型](https://huggingface.co/penguin3333333/TipDex-VTLA) |
+| **TipDex-Data** | 50 条原始轨迹和 50 条配对 RGB 光照扰动轨迹 | [Hugging Face 数据集](https://huggingface.co/datasets/penguin3333333/TipDex-Data) |
 
 模型包已包含回放观测样例，运行该示例无须下载完整数据集。模型下载与推理命令见[第 4 节](#4-本地运行)，数据文件与配对元数据说明见数据集页面。
 
@@ -86,7 +86,7 @@ pip install ".[cuda]"
 ### 4.2 下载模型
 
 ```bash
-export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TiP-Dex-EGG"))')"
+export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TipDex-VTLA"))')"
 tipdex verify --model "$MODEL_DIR"
 ```
 
@@ -121,7 +121,7 @@ CUDA_VISIBLE_DEVICES=0 tipdex serve \
 
 ```bash
 python scripts/check_http.py \
-  --example "$MODEL_DIR/example/egg.npz" \
+  --example "$MODEL_DIR/example/observation.npz" \
   --url http://127.0.0.1:8116
 ```
 
@@ -140,7 +140,7 @@ VASE、TACE 分别位于独立目录 [`src/tipdex/VASE`](src/tipdex/VASE) 和 [`
 
 ## 5. 许可
 
-源代码采用 [Apache-2.0](LICENSE) 许可，第三方组件说明见 [NOTICE.md](NOTICE.md)。模型包包含 Gemma/PaliGemma 派生参数，使用时适用随包发布的 [Gemma 条款](https://huggingface.co/penguin3333333/TiP-Dex-EGG/blob/main/LICENSE_GEMMA.txt)。具体资源信息见[模型卡](https://huggingface.co/penguin3333333/TiP-Dex-EGG)与[数据集卡](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER)。
+源代码采用 [Apache-2.0](LICENSE) 许可，第三方组件说明见 [NOTICE.md](NOTICE.md)。模型包包含 Gemma/PaliGemma 派生参数，使用时适用随包发布的 [Gemma 条款](https://huggingface.co/penguin3333333/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt)。具体资源信息见[模型卡](https://huggingface.co/penguin3333333/TipDex-VTLA)与[数据集卡](https://huggingface.co/datasets/penguin3333333/TipDex-Data)。
 
 感谢 [Physical Intelligence / OpenPI](https://github.com/Physical-Intelligence/openpi) 及本项目使用的上游开源库。
 

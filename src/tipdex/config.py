@@ -1,4 +1,4 @@
-"""Explicit inference choices for the paper and EGG presets."""
+"""Explicit inference choices for the paper and TipDex presets."""
 from dataclasses import asdict, dataclass, fields
 import json
 import math
@@ -34,7 +34,7 @@ class InferenceConfig:
             raise ValueError("Unknown tactile fusion")
         if type(self.seed) is not int or not 0 <= self.seed < 2**32:
             raise ValueError("seed must be a uint32")
-        if self.profile not in ("paper", "egg", "custom"):
+        if self.profile not in ("paper", "tipdex", "custom"):
             raise ValueError("Unknown profile")
         if self.profile == "paper" and (self.visual_offset != 0 or self.visual_scale != 1
                 or self.residual_bound != .1 or self.forecast_horizon != 30
@@ -45,10 +45,10 @@ class InferenceConfig:
     def preset(cls, name="paper"):
         if name == "paper":
             return cls()
-        if name == "egg":
-            return cls(profile="egg", visual_offset=.6, visual_scale=.4,
+        if name == "tipdex":
+            return cls(profile="tipdex", visual_offset=.6, visual_scale=.4,
                        residual_bound=.01, forecast_horizon=5, tactile_fusion="action_adapter")
-        raise ValueError("Preset must be paper or egg")
+        raise ValueError("Preset must be paper or tipdex")
 
     @classmethod
     def from_dict(cls, data):
@@ -58,7 +58,7 @@ class InferenceConfig:
 
     @classmethod
     def load(cls, name_or_path="paper"):
-        if str(name_or_path) in ("paper", "egg"):
+        if str(name_or_path) in ("paper", "tipdex"):
             return cls.preset(str(name_or_path))
         return cls.from_dict(json.loads(Path(name_or_path).read_text()))
 

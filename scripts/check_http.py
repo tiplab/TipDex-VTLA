@@ -25,7 +25,7 @@ status=json.loads(get('/status'));assert status['ready']
 assert 'TipDex_VTLA' in get('/config').decode()
 assert 'TACE' in get('/dashboard').decode()
 presets=json.loads(get('/presets'));assert presets['paper']['forecast_horizon']==30
-assert post('/validate-config',presets['egg'])['visual_offset']==.6
+assert post('/validate-config',presets['tipdex'])['visual_offset']==.6
 sid=post('/reset',{})['session_id']
 a=dict(np.load(args.example,allow_pickle=False))
 state=a['state'].tolist();raw=a['touch'][-1].astype(int).tolist();command=state[:13]

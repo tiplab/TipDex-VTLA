@@ -1,0 +1,15 @@
+{
+  "repo_id": "penguin3333333/TipDex-Data",
+  "revision": "43399924b14284e41299a540b9651b610f21bc61",
+  "renamed": true,
+  "content_files_unchanged": 612,
+  "changed_files": [
+    "README.md",
+    "code/build_dataset.py",
+    "code/independent_qa.py",
+    "code/lighting.py",
+    "provenance/sha256_manifest.json"
+  ],
+  "recorded_recipes_unchanged": 50,
+  "builder_recipe_selection_verified": 50
+}

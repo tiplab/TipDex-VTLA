@@ -1,9 +1,9 @@
 {
-  "project": "TipDex_VTLA",
-  "release": "0.2.0",
+  "project": "TipDex-VTLA",
+  "release": "0.2.1",
   "date": "2026-11-20",
   "unit_protocol_tests": {
-    "passed": 44,
+    "passed": 49,
     "failed": 0,
     "errors": 0
   },
@@ -14,31 +14,32 @@
       "closed_loop_updates": 2,
       "hardware_commands_sent": false
     },
-    "egg": {
+    "tipdex": {
       "real_weights": true,
-      "report": "installed_egg/report.json",
+      "report": "installed_tipdex/report.json",
       "closed_loop_updates": 2,
       "hardware_commands_sent": false
     }
   },
   "http_inference": {
     "passed": true,
-    "report": "http_smoke.json"
+    "report": "http_smoke.json",
+    "scope": "Prior 0.2.0 full model HTTP smoke; 0.2.1 configuration endpoints covered by the installed protocol suite"
   },
   "distribution_matches_tested_installation": true,
-  "source_files_sha256_verified": 88,
+  "source_files_sha256_verified": 98,
   "model_bundle_files": 31,
-  "huggingface_remote_roundtrip": true,
   "hardware_commands_sent": false,
   "execution_feedback": "explicitly simulated SDK acknowledgements",
   "scope": "inference functionality; no tactile accuracy or task success claims",
   "huggingface_release": {
-    "repo_id": "penguin3333333/TiP-Dex-EGG",
-    "revision": "57671fb7681fdab0f11dd97c683eb5d35f569307",
+    "repo_id": "penguin3333333/TipDex-VTLA",
+    "revision": "69d6df9504435dfffa504a536cde181c0dc7fd10",
     "profiles_verified": [
       "paper",
-      "egg"
+      "tipdex"
     ],
     "evidence_directory": "huggingface"
-  }
+  },
+  "huggingface_remote_integrity": true
 }

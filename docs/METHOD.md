@@ -24,11 +24,13 @@
 
 TACE 的 U 取每个快流步骤最后一个 Action Expert Transformer 输出，修正后经冻结动作投影层得到速度。残差和 gate 共享 64 维 GELU trunk。两个修正积分流使用 FP32，保留原始 BF16 参数值；修正差值加到原生流输出。已执行及不可替换位置在每一步恢复，防止注意力在动作位置之间传播修正而改变受保护命令。
 
+<a id="configuration"></a>
+
 ## 配置与分数融合
 
 配置页由 `tipdex config` 或模型服务的 `/config` 提供；下载 JSON 后通过 `--config` 加载。
 
-| 参数 | 论文预设 `paper` | 鸡蛋预设 `egg` |
+| 参数 | 论文预设 `paper` | 部署预设 `tipdex` |
 |---|---:|---:|
 | 视觉分数 | `qv` | `0.6+0.4*qv` |
 | `visual_offset` / `visual_scale` | 0 / 1 | 0.6 / 0.4 |

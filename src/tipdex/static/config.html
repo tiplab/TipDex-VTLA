@@ -2,7 +2,7 @@
 <title>TipDex_VTLA · 推理配置</title><style>
 body{font:16px system-ui;background:#f3f5f8;color:#18283c;margin:0}main{max-width:850px;margin:48px auto;padding:28px;background:white;border-radius:16px}h1{font-size:28px}label{display:grid;grid-template-columns:1fr 200px;gap:16px;margin:16px 0}input,select,button{font:inherit;padding:9px;border:1px solid #c4cfdd;border-radius:6px}button{background:#154c91;color:white;cursor:pointer}pre{background:#f2f5f9;padding:18px;overflow:auto}small{color:#536375}#message{white-space:pre-wrap}</style>
 <main><h1>TipDex_VTLA 推理配置</h1><p>选择预设或调整参数，下载配置后通过 <code>--config inference.json</code> 加载。</p>
-<label>配置预设<select id="preset"><option value="paper">论文方法</option><option value="egg">鸡蛋部署</option><option value="custom">自定义</option></select></label>
+<label>配置预设<select id="preset"><option value="paper">论文方法</option><option value="tipdex">TipDex 部署</option><option value="custom">自定义</option></select></label>
 <div id="fields"></div><p id="formula"></p><button id="save">校验并下载配置</button> <a href="/dashboard">查看 VASE + TACE + q</a><p id="message" role="status"></p><pre id="preview"></pre>
 <small>配置文件在模型启动时生效。误差阈值从模型包的 forecast/contract.json 加载。</small></main>
 <script>

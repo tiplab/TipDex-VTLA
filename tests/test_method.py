@@ -24,8 +24,8 @@ def test_paper_score_identity_monotonicity_and_large_error_only():
         assert np.all(np.diff(values)<=1e-14)
         assert 0 <= q-values[-1] <= .10000001
     assert np.all(np.diff([score(q,1) for q in np.linspace(0,1,100)])>=0)
-    assert score(.8,0,'egg')==pytest.approx(.92)
-    assert score(.8,1,'egg')==pytest.approx(.82)
+    assert score(.8,0,'tipdex')==pytest.approx(.92)
+    assert score(.8,1,'tipdex')==pytest.approx(.82)
 
 
 def test_paper_profile_rejects_silent_overrides():

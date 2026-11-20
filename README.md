@@ -8,8 +8,8 @@ Official inference implementation
 
 [![Project Page](https://img.shields.io/badge/Project-Page-3b82f6?style=flat)](https://tiplab.github.io/TipDex-VTLA/)
 [![Paper: arXiv](https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2611.25683)
-[![Weights: TiP-Dex-EGG](https://img.shields.io/badge/Weights-TiP--Dex--EGG-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TiP-Dex-EGG)
-[![Dataset: EGG-TRANSFER](https://img.shields.io/badge/Dataset-EGG--TRANSFER-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER)
+[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TipDex-VTLA)
+[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-Data)
 [![Code License: Apache-2.0](https://img.shields.io/badge/Code_License-Apache--2.0-83a83f?style=flat)](LICENSE)
 [![Python: 3.11](https://img.shields.io/badge/Python-3.11-3776ab?style=flat&logo=python&logoColor=white)](pyproject.toml)
 
@@ -30,7 +30,7 @@ Official inference implementation
 
 **TipDex-VTLA** is a vision–tactile–language–action framework for dexterous manipulation under changing illumination. It estimates visual reliability and checks tactile predictions against incoming measurements to regulate action refinement during execution.
 
-This repository provides the official inference example, including model loading, slow–fast inference, **VASE**, **TACE**, and a live reliability dashboard. The **TiP-Dex-EGG** model package and the paired **EGG-TRANSFER** demonstration dataset are available on Hugging Face.
+This repository provides the official inference example, including model loading, slow–fast inference, **VASE**, **TACE**, and a live reliability dashboard. The **TipDex-VTLA** model package and the paired **TipDex-Data** demonstration dataset are available on Hugging Face.
 
 <p align="center">
   <img src="figures/real-world-highlights.gif" width="800" alt="Real-world demonstrations of egg transfer, grape pinching, tissue extraction, and mung bean pouring.">
@@ -49,7 +49,7 @@ This repository provides the official inference example, including model loading
 - **Tactile Anticipation and Correction during Execution (TACE).** Combines visual reliability and verified tactile error to gate bounded corrections to Action Expert features.
 - **Slow–fast execution.** Reuses cached context and intermediate flow states to update replaceable, unexecuted actions while preserving committed commands and execution times. Accepted action updates trigger new tactile forecasts.
 
-| TiP-Dex-EGG component | Description |
+| TipDex-VTLA component | Description |
 | --- | --- |
 | Policy | Egg-transfer backbone, checkpoint 9309 |
 | Reliability | Independent VASE and TACE modules |
@@ -64,8 +64,8 @@ The heatmap uses SDK register order: `heatmap[r, c] = raw364[26*r + c] / 65535`.
 
 | Resource | Contents | Download |
 | --- | --- | --- |
-| **TiP-Dex-EGG** | Policy, VASE, TACE, shared-encoder tactile forecaster, tokenizer, normalization statistics, and an inference sample | [Hugging Face Model](https://huggingface.co/penguin3333333/TiP-Dex-EGG) |
-| **TipDex-VTLAdemo-data_EGG-TRANSFER** | 50 original trajectories and 50 paired trajectories with RGB illumination perturbations | [Hugging Face Dataset](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER) |
+| **TipDex-VTLA** | Policy, VASE, TACE, shared-encoder tactile forecaster, tokenizer, normalization statistics, and an inference sample | [Hugging Face Model](https://huggingface.co/penguin3333333/TipDex-VTLA) |
+| **TipDex-Data** | 50 original trajectories and 50 paired trajectories with RGB illumination perturbations | [Hugging Face Dataset](https://huggingface.co/datasets/penguin3333333/TipDex-Data) |
 
 The model package includes an example observation for replay. Downloading the full dataset is optional for running that example. Model download and inference commands are provided in [Section 4](#4-how-to-run-locally); the dataset card describes its files and pairing metadata.
 
@@ -86,7 +86,7 @@ pip install ".[cuda]"
 ### 4.2 Download the model
 
 ```bash
-export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TiP-Dex-EGG"))')"
+export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TipDex-VTLA"))')"
 tipdex verify --model "$MODEL_DIR"
 ```
 
@@ -121,7 +121,7 @@ In another terminal with the same environment and `MODEL_DIR`, send the bundled 
 
 ```bash
 python scripts/check_http.py \
-  --example "$MODEL_DIR/example/egg.npz" \
+  --example "$MODEL_DIR/example/observation.npz" \
   --url http://127.0.0.1:8116
 ```
 
@@ -140,7 +140,7 @@ VASE and TACE are separate modules under [`src/tipdex/VASE`](src/tipdex/VASE) an
 
 ## 5. License
 
-The source code is released under the [Apache License 2.0](LICENSE), with third-party components documented in [NOTICE.md](NOTICE.md). The model package includes Gemma/PaliGemma-derived parameters and the applicable [Gemma terms](https://huggingface.co/penguin3333333/TiP-Dex-EGG/blob/main/LICENSE_GEMMA.txt). Refer to the [model card](https://huggingface.co/penguin3333333/TiP-Dex-EGG) and [dataset card](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER) for resource-specific information.
+The source code is released under the [Apache License 2.0](LICENSE), with third-party components documented in [NOTICE.md](NOTICE.md). The model package includes Gemma/PaliGemma-derived parameters and the applicable [Gemma terms](https://huggingface.co/penguin3333333/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt). Refer to the [model card](https://huggingface.co/penguin3333333/TipDex-VTLA) and [dataset card](https://huggingface.co/datasets/penguin3333333/TipDex-Data) for resource-specific information.
 
 We acknowledge [Physical Intelligence / OpenPI](https://github.com/Physical-Intelligence/openpi) and the upstream libraries used by this implementation.
 

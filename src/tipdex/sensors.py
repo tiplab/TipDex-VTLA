@@ -1,4 +1,4 @@
-"""Causal raw F1 stream for demo01 EGG; no model or hardware imports."""
+"""Causal raw F1 stream for TipDex; no model or hardware imports."""
 import math
 from collections import deque
 import numpy as np

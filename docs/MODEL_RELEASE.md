@@ -1,6 +1,6 @@
 # 模型包与 Hugging Face 发布
 
-已发布模型：[penguin3333333/TiP-Dex-EGG](https://huggingface.co/penguin3333333/TiP-Dex-EGG)。验收版本为 `57671fb7681fdab0f11dd97c683eb5d35f569307`，包含原始 9309、VASE、TACE、共享编码器触觉预测器，以及配套推理源码和安装包。安装与启动命令见 [README](../README.md)。
+已发布模型：[penguin3333333/TipDex-VTLA](https://huggingface.co/penguin3333333/TipDex-VTLA)。发布版本记录在 `validation/huggingface/remote_integrity.json`；模型包包含原始 9309、VASE、TACE、共享编码器触觉预测器，以及配套推理源码和安装包。安装与启动命令见 [README](../README.md)。
 
 权重不进入源代码仓库。完整模型包包含以下内容：
 
@@ -11,7 +11,7 @@ LICENSE
 LICENSE_GEMMA.txt
 backbone/config.json
 backbone/params/                    # 原生 Orbax 参数与分片
-backbone/assets/demo01_egg/norm_stats.json
+backbone/assets/tipdex/norm_stats.json
 backbone/assets/fastslow.json
 tokenizer/paligemma_tokenizer.model
 VASE/weights.npz
@@ -21,9 +21,9 @@ TACE/config.json
 forecast/weights.pt
 forecast/normalization.npz
 forecast/contract.json
-example/egg.npz
-inference/TipDex-VTLA-0.2.0.zip
-inference/tipdex_vtla-0.2.0-py3-none-any.whl
+example/observation.npz
+inference/TipDex-VTLA-0.2.1.zip
+inference/tipdex_vtla-0.2.1-py3-none-any.whl
 ```
 
 发布者使用 `tipdex-export` 打包已有权重，保留张量文件原始字节，并生成文件大小、SHA-256 及配套关系校验：
@@ -35,7 +35,7 @@ tipdex-export \
   --tace /path/to/tace_artifact \
   --forecast /path/to/shared_forecast_artifact \
   --tokenizer /path/to/paligemma_tokenizer.model \
-  --example /path/to/egg.npz \
+  --example /path/to/observation.npz \
   --output /path/to/model_bundle
 ```
 

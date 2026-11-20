@@ -17,7 +17,7 @@ def run_replay(policy, *, output=None, stress_error=False):
     weight_paths=[root/'VASE/weights.npz',root/'TACE/tace.msgpack',
                   p.forecast.directory/'weights.pt']
     before={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in weight_paths}
-    a=dict(np.load(root/'example/egg.npz',allow_pickle=False))
+    a=dict(np.load(p.bundle.example_path,allow_pickle=False))
     sid=p.reset()
     for name,valid,end in [('calibration_touch','calibration_valid',99.),('touch','frame_valid',100.)]:
         for j in range(16):p.feed_tactile(sid,a[name][j],bool(a[valid][j]),end+(j-15)/30.)

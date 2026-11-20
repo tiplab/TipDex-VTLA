@@ -1,4 +1,4 @@
-"""Differentiable, isolated TACE feature correction for the frozen egg policy.
+"""Differentiable, isolated TACE feature correction for the frozen TipDex policy.
 
 Public API: ``initialize(...)`` builds a plain dictionary of floating-point JAX
 arrays; ``refine_four(...)`` consumes that dictionary and returns normalized
@@ -198,7 +198,7 @@ def refine_four(model, snapshot, observation, feedback_state, feedback_touch,
             or model.flow_steps != FLOW_STEPS or model.slow_steps != FLOW_STEPS - FAST_STEPS):
         raise ValueError("refine_four requires horizon=30, action_dim=48 and 6+4/10 flow steps")
     if state_dim != FEEDBACK_STATE_DIM:
-        raise ValueError("the egg refiner requires feedback_state dimension 19")
+        raise ValueError("the TipDex refiner requires feedback_state dimension 19")
     x = jnp.asarray(snapshot.x_split)
     if x.ndim != 3 or x.shape[1:] != (ACTION_HORIZON, ACTION_DIM) or x.shape[0] < 1:
         raise ValueError("snapshot.x_split must have shape [B,30,48] with B>0")

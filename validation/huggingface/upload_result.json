@@ -1,8 +1,7 @@
 {
-  "repo_id": "penguin3333333/TiP-Dex-EGG",
-  "revision": "57671fb7681fdab0f11dd97c683eb5d35f569307",
-  "url": "https://huggingface.co/penguin3333333/TiP-Dex-EGG",
-  "commit_url": "https://huggingface.co/penguin3333333/TiP-Dex-EGG/commit/57671fb7681fdab0f11dd97c683eb5d35f569307",
-  "upload_seconds": 676.5823521614075,
-  "private": false
+  "repo_id": "penguin3333333/TipDex-VTLA",
+  "revision": "69d6df9504435dfffa504a536cde181c0dc7fd10",
+  "renamed": true,
+  "parameter_and_component_files_unchanged": 22,
+  "files": 33
 }

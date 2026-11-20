@@ -25,7 +25,7 @@ def make_handler(loop=None, executor=None):
             elif self.path=='/dashboard':
                 self.send(200,files('tipdex').joinpath('static/dashboard.html').read_text(),'text/html')
             elif self.path=='/presets':
-                self.send(200,{k:InferenceConfig.preset(k).as_dict() for k in ('paper','egg')})
+                self.send(200,{k:InferenceConfig.preset(k).as_dict() for k in ('paper','tipdex')})
             elif self.path=='/status' and loop is not None:
                 # Snapshot telemetry only; does not wait for model inference.
                 self.send(200,{**loop.policy.status(),'last':loop.last})

@@ -21,11 +21,15 @@ def export_bundle(checkpoint, vase, tace, forecast, tokenizer, example, output):
     result = json.loads((tace/'result.json').read_text())
     native = json.loads((tace/'runtime_manifest.json').read_text())
     contract = json.loads((forecast/'contract.json').read_text())
+    normalizations = [path for path in (checkpoint/'assets').glob('*/norm_stats.json')
+                      if sha256(path) == native['normalization_sha256']]
+    if len(normalizations) != 1:
+        raise ValueError('Expected one checkpoint normalization matching TACE provenance')
+    normalization = normalizations[0]
     if (sha256(vase/'weights.npz') != meta['weights_sha256']
             or sha256(tace/'tace.msgpack') != result['weights_sha256']
             or protocol['vase_weight_hash'] != meta['weights_sha256']
-            or sha256(checkpoint/'params/_METADATA') != native['backbone_metadata_sha256']
-            or sha256(checkpoint/'assets/demo01_egg/norm_stats.json') != native['normalization_sha256']):
+            or sha256(checkpoint/'params/_METADATA') != native['backbone_metadata_sha256']):
         raise ValueError('Backbone, VASE and TACE provenance mismatch')
     for name in ('weights.pt','normalization.npz'):
         if sha256(forecast/name) != contract['sha256'][name]:
@@ -39,11 +43,11 @@ def export_bundle(checkpoint, vase, tace, forecast, tokenizer, example, output):
         path=root/name;path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text(json.dumps(value,indent=2,allow_nan=False)+'\n')
     shutil.copytree(checkpoint/'params',root/'backbone/params')
-    copy(checkpoint/'assets/demo01_egg/norm_stats.json','backbone/assets/demo01_egg/norm_stats.json')
+    copy(normalization,'backbone/assets/tipdex/norm_stats.json')
     copy(checkpoint/'assets/fastslow.json','backbone/assets/fastslow.json')
     write('backbone/config.json',json.loads(files('tipdex').joinpath('static/backbone_9309.json').read_text()))
     copy(tokenizer,'tokenizer/paligemma_tokenizer.model')
-    copy(example,'example/egg.npz')
+    copy(example,'example/observation.npz')
     copy(vase/'weights.npz','VASE/weights.npz')
     # Runtime metadata contains only tensor contracts and scores, no private paths.
     keys=('schema','kind','prediction_formula','target_formula','pooling','q_v_floor',
@@ -66,7 +70,7 @@ def export_bundle(checkpoint, vase, tace, forecast, tokenizer, example, output):
     entries={str(p.relative_to(root)):dict(bytes=p.stat().st_size,sha256=sha256(p))
              for p in sorted(root.rglob('*')) if p.is_file()}
     write('manifest.json',dict(schema=SCHEMA,checkpoint_step=9309,
-        model='TipDex_VTLA',files=entries,default_profile='paper'))
+        model='TipDex-VTLA',files=entries,default_profile='paper'))
     ModelBundle.load(root)
     return root
 

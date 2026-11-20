@@ -18,7 +18,7 @@ def load_backbone(bundle, inference_config):
     if (config.action_horizon,config.action_dim,config.tactile_layout) != (30,48,'f1_364'):
         raise ValueError('Model bundle has an incompatible action or sensor layout')
     model = config.load(restore_params(bundle.path('backbone/params'), dtype=jnp.bfloat16))
-    norm = load(bundle.path('backbone/assets/demo01_egg'))
+    norm = load(bundle.normalization_path.parent)
     normalize = t.Normalize(norm, use_quantiles=True)
     tokenizer = PaligemmaTokenizer(config.max_token_len, model_path=bundle.path('tokenizer/paligemma_tokenizer.model'))
     inputs = t.compose([t.InjectDefaultPrompt('Move the egg into the box.'), OctopusInputs(),

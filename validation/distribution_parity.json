@@ -1,8 +1,8 @@
 {
-  "wheel": "tipdex_vtla-0.2.0-py3-none-any.whl",
-  "sha256": "9a4ca9f6170e2a7da3f32afeeecb5c2fd810da1a284dbbb079e5009da206a63e",
+  "wheel": "tipdex_vtla-0.2.1-py3-none-any.whl",
+  "sha256": "84ef5a8fd827e36b3d4d79c00c74c7b4afa912a3f7c938157e153f0b10a0d745",
   "module_files_checked": 63,
   "matches_tested_installation": true,
   "mismatches": [],
-  "artifact_source": "https://huggingface.co/penguin3333333/TiP-Dex-EGG/resolve/57671fb7681fdab0f11dd97c683eb5d35f569307/inference/tipdex_vtla-0.2.0-py3-none-any.whl"
+  "artifact_source": "https://huggingface.co/penguin3333333/TipDex-VTLA/resolve/69d6df9504435dfffa504a536cde181c0dc7fd10/inference/tipdex_vtla-0.2.1-py3-none-any.whl"
 }
