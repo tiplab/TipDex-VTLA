@@ -6,7 +6,14 @@
 
 Official inference implementation
 
-[Project Page](https://tiplab.github.io/TipDex-VTLA/) · [Paper](https://arxiv.org/abs/2611.25683) · [Model](https://huggingface.co/penguin3333333/TiP-Dex-EGG) · [Dataset](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER) · [中文](README_zh-CN.md)
+[![Project Page](https://img.shields.io/badge/Project-Page-3b82f6?style=flat)](https://tiplab.github.io/TipDex-VTLA/)
+[![Paper: arXiv](https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2611.25683)
+[![Weights: TiP-Dex-EGG](https://img.shields.io/badge/Weights-TiP--Dex--EGG-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TiP-Dex-EGG)
+[![Dataset: EGG-TRANSFER](https://img.shields.io/badge/Dataset-EGG--TRANSFER-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-VTLAdemo-data_EGG-TRANSFER)
+[![Code License: Apache-2.0](https://img.shields.io/badge/Code_License-Apache--2.0-83a83f?style=flat)](LICENSE)
+[![Python: 3.11](https://img.shields.io/badge/Python-3.11-3776ab?style=flat&logo=python&logoColor=white)](pyproject.toml)
+
+**English** | [简体中文](README_zh-CN.md)
 
 </div>
 
@@ -143,8 +150,14 @@ If you use TipDex-VTLA in your research, please cite:
 
 ```bibtex
 @misc{tipdexvtla,
-  title = {{TipDex-VTLA: Learning When to Refine Actions with Touch for Dexterous Manipulation}},
-  author = {Ge, Xudi and Liu, Yepeng and Liu, Haifeng and Shi, Enze and Zhang, Liangqi and Xu, Yongchao},
+  title = {{TipDex-VTLA: Learning When to Refine Actions with Touch
+            for Dexterous Manipulation}},
+  author = {Ge, Xudi and
+            Liu, Yepeng and
+            Liu, Haifeng and
+            Shi, Enze and
+            Zhang, Liangqi and
+            Xu, Yongchao},
   year = {2026},
   eprint = {2611.25683},
   archivePrefix = {arXiv},
