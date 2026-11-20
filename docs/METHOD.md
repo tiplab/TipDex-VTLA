@@ -24,4 +24,4 @@
 
 TACE 的 U 取每个快流步骤最后一个 Action Expert Transformer 输出，修正后经冻结动作投影层得到速度。残差和 gate 共享 64 维 GELU trunk。两个修正积分流使用 FP32，保留原始 BF16 参数值；修正差值加到原生流输出。已执行及不可替换位置在每一步恢复，防止注意力在动作位置之间传播修正而改变受保护命令。
 
-固定 G 的解析式及预设见 [配置说明](CONFIGURATION.md)。触觉序列化和归一化见 [README](../README.md)。
+固定 G 的解析式及预设见 [配置说明](CONFIGURATION.md)。触觉序列化和归一化见 [触觉表示与转换](TACTILE_REPRESENTATION.md)。
