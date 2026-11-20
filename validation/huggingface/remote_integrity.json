@@ -1,0 +1,24 @@
+{
+  "repo_id": "penguin3333333/TiP-Dex-EGG",
+  "revision": "57671fb7681fdab0f11dd97c683eb5d35f569307",
+  "public": true,
+  "manifest_files_present": 31,
+  "all_manifest_sizes_match": true,
+  "lfs_sha256_files_verified": 14,
+  "lfs_files": [
+    "TACE/tace.msgpack",
+    "VASE/weights.npz",
+    "backbone/params/ocdbt.process_0/d/0500a924925f77f9351acc487c0de191",
+    "backbone/params/ocdbt.process_0/d/3819599bdb18899774fd50f69620e501",
+    "backbone/params/ocdbt.process_0/d/58b20dc02897b8ebb994b2427e5aec25",
+    "backbone/params/ocdbt.process_0/d/8259c2a1890090affb6e110ae9946a93",
+    "backbone/params/ocdbt.process_0/d/b4e208a636d5ee07e9b64c832edb99b2",
+    "backbone/params/ocdbt.process_0/d/b6f6da04408b3e2aab6aa32c4d99762e",
+    "example/egg.npz",
+    "forecast/normalization.npz",
+    "forecast/weights.pt",
+    "inference/TipDex-VTLA-0.2.0.zip",
+    "inference/tipdex_vtla-0.2.0-py3-none-any.whl",
+    "tokenizer/paligemma_tokenizer.model"
+  ]
+}

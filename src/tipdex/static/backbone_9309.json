@@ -1,0 +1,15 @@
+{
+  "action_dim":48,"action_horizon":30,"max_token_len":200,"dtype":"bfloat16",
+  "paligemma_variant":"gemma_2b","action_expert_variant":"gemma_300m","pi05":true,
+  "discrete_state_input":true,"continuous_state_input":false,"loss_action_dim":null,
+  "loss_action_dims":[0,1,2,3,4,5,6,7,8,9,10,11,12],
+  "image_aug_crop_enabled":false,"image_aug_crop_ratio":0.95,"image_aug_rotate_deg":5.0,
+  "image_aug_brightness":0.08,"image_aug_contrast":0.08,"image_aug_saturation":0.08,
+  "image_aug_hue":0.03,"image_aug_prob":0.1,
+  "tactile_enabled":true,"tactile_num_sensors":1,"tactile_num_frames":16,
+  "tactile_embed_dim":256,"tactile_fusion":"action_adapter","contact_loss_weight":0.0,
+  "pytorch_compile_mode":"max-autotune","num_flow_steps":10,"slow_steps":6,
+  "max_delay_frames":8,"slow_loss_weight":1.0,"fast_loss_weight":1.0,
+  "validation_fraction":0.05,"split_seed":42,"fps":30.0,"use_frame_cache":true,
+  "tactile_layout":"f1_364","reuse_training_prefix":true,"training_objective":"paired"
+}

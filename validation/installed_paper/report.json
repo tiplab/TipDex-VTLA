@@ -1,0 +1,49 @@
+{
+  "model": "9309",
+  "profile": "paper",
+  "actual_weights_sha256": {
+    "VASE/weights.npz": "fca88ff60773bf2c591b7a08c44956d3a6683b2ffee39b25ff173dfbf6f547f9",
+    "TACE/tace.msgpack": "656d3cb65f379507f93648348a832380b4c5164bdb74030d5e8552333b3ec4ec",
+    "forecast/weights.pt": "1f7a9c30d4b74bcd0dfce8240547b7fe87084c69a99b0c581e4f4da817c59db8"
+  },
+  "weights_unchanged": true,
+  "forecast_shape": [
+    30,
+    364
+  ],
+  "q_v": 0.7893909811973572,
+  "q_base": 0.7893909811973572,
+  "q_exec": 0.6893909811973572,
+  "verified_error": 0.999999999999899,
+  "verification": "verified",
+  "frame_index": 0,
+  "error_aggregation": "current_frame_mae_over_364_values",
+  "tace_active": true,
+  "max_normalized_action_change_due_to_error": 0.005108244717121124,
+  "protected_action_delta": 0.0,
+  "model_action_shape": [
+    30,
+    13
+  ],
+  "all_actions_finite": true,
+  "shared_encoder": {
+    "same_encoder_object": true,
+    "feature_max_abs_error": 4.76837158203125e-07,
+    "encoder_parameters_sha256": "480ff22dc7d243d3034c93b9004399d06b911238240ce5ce038e04e0560bee39",
+    "encoder_parameters_unchanged": true
+  },
+  "command_evidence": "synthetic timestamped SDK acknowledgements for a held command",
+  "measurement": "raw364 stress injection",
+  "accuracy_evaluation": false,
+  "hardware_commands_sent": false,
+  "closed_loop": {
+    "accepted_updates": 2,
+    "forecasts_issued": 2,
+    "current_frame_verified": true,
+    "score_decreased": true,
+    "committed_slot_preserved": true,
+    "action_times_preserved": true,
+    "execution": "simulated SDK acknowledgements",
+    "hardware_commands_sent": false
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "profile": "egg",
+  "visual_offset": 0.6,
+  "visual_scale": 0.4,
+  "residual_bound": 0.01,
+  "gate_kappa": 1.0,
+  "maximum_tactile_decrement": 0.1,
+  "forecast_horizon": 5,
+  "tactile_fusion": "action_adapter",
+  "seed": 43
+}

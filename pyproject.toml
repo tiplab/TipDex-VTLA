@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tipdex-vtla"
+version = "0.2.0"
+description = "TipDex_VTLA official inference example with VASE and TACE"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE", "licenses/*.txt", "licenses/OPENPI_LICENSE"]
+requires-python = ">=3.11,<3.13"
+dependencies = [
+  "numpy==1.26.4", "jax==0.5.3", "flax==0.10.2", "orbax-checkpoint==0.11.13",
+  "tensorstore==0.1.74", "ml-dtypes==0.4.1", "torch==2.7.1",
+  "augmax==0.3.4", "einops==0.8.1", "jaxtyping==0.2.36", "beartype==0.19.0",
+  "numpydantic>=1.6.6,<2", "sentencepiece==0.2.0", "pillow>=11,<12",
+  "huggingface-hub==0.32.3", "typing-extensions>=4.12.2", "chex==0.1.90",
+  "etils[epath]>=1.12,<2", "treescope>=0.1.7,<0.2"
+]
+
+[project.optional-dependencies]
+cuda = ["jax[cuda12]==0.5.3"]
+test = ["pytest>=8,<9", "build>=1,<2"]
+
+[project.scripts]
+tipdex = "tipdex.cli:main"
+tipdex-export = "tipdex.export:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tipdex = ["static/*.html", "static/*.json", "static/*.txt", "static/*.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

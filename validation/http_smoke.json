@@ -1,0 +1,21 @@
+{
+  "ready": true,
+  "config_http": true,
+  "dashboard_http": true,
+  "presets_validated": true,
+  "actual_model_slow": true,
+  "actual_model_fast": true,
+  "actual_forecast": true,
+  "forecast_horizon": 30,
+  "q_v": 0.7893909811973572,
+  "q": 0.7893909811973572,
+  "q_visible_in_status": true,
+  "tace_active": true,
+  "replaced": 21,
+  "rgb_transport": "lossless_png",
+  "slow_compute_ms": 71.83014007750899,
+  "slow_roundtrip_age_ms": 178.82993596140295,
+  "feedback_errors": [],
+  "hardware_commands_sent": false,
+  "execution_evidence": "synthetic HTTP feedback; model plans are not sent to actuators"
+}

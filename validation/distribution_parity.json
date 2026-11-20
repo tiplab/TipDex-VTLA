@@ -1,0 +1,8 @@
+{
+  "wheel": "tipdex_vtla-0.2.0-py3-none-any.whl",
+  "sha256": "9a4ca9f6170e2a7da3f32afeeecb5c2fd810da1a284dbbb079e5009da206a63e",
+  "module_files_checked": 63,
+  "matches_tested_installation": true,
+  "mismatches": [],
+  "artifact_source": "https://huggingface.co/penguin3333333/TiP-Dex-EGG/resolve/57671fb7681fdab0f11dd97c683eb5d35f569307/inference/tipdex_vtla-0.2.0-py3-none-any.whl"
+}

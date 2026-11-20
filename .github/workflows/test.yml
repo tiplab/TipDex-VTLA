@@ -1,0 +1,22 @@
+name: Inference package
+on: [push, pull_request]
+jobs:
+  protocol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+      - run: pip install torch==2.7.1 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install ".[test]"
+      - run: python -m pytest -q tests
+        env:
+          JAX_PLATFORMS: cpu
+          CUDA_VISIBLE_DEVICES: ''
+      - run: python -m build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: tipdex-inference-distribution
+          path: dist/

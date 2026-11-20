@@ -1,0 +1,132 @@
+{
+  "schema": "tipdex.inference_bundle.v1",
+  "checkpoint_step": 9309,
+  "model": "TiP-Dex-EGG",
+  "files": {
+    "LICENSE": {
+      "bytes": 11356,
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    "LICENSE_GEMMA.txt": {
+      "bytes": 8431,
+      "sha256": "3e2c24001f9ef57bf7ec959a3658fbb49cdad113cdf394c264da9d16f9bdd132"
+    },
+    "README.md": {
+      "bytes": 3775,
+      "sha256": "86da29573a383a28ccde29d042cc0de673c82164498d9089a697c5be2cae6c7c"
+    },
+    "TACE/config.json": {
+      "bytes": 489,
+      "sha256": "851c249d36a0ebce28cb1cca281767f5c6c5d6ddef04036057ba207fb26e1ffe"
+    },
+    "TACE/tace.msgpack": {
+      "bytes": 599567,
+      "sha256": "656d3cb65f379507f93648348a832380b4c5164bdb74030d5e8552333b3ec4ec"
+    },
+    "VASE/metadata.json": {
+      "bytes": 697,
+      "sha256": "205bc56244c9a419e45975b01745858093ebb7c526be56e1b673a74a0f9ecf97"
+    },
+    "VASE/weights.npz": {
+      "bytes": 983276,
+      "sha256": "fca88ff60773bf2c591b7a08c44956d3a6683b2ffee39b25ff173dfbf6f547f9"
+    },
+    "backbone/assets/demo01_egg/norm_stats.json": {
+      "bytes": 3861,
+      "sha256": "ad1430f66bd235cf9f75a378dfd85431a1307ba39596922f5420498fc56318ca"
+    },
+    "backbone/assets/fastslow.json": {
+      "bytes": 410,
+      "sha256": "4747a9bd13a7e3e6b71f8722a95ea0ed9f09afe14ddc44ff40eea062b39f0a78"
+    },
+    "backbone/config.json": {
+      "bytes": 1177,
+      "sha256": "3e208cf1fce9c5286bef50699e55d42a6f433b4fa336903daa0d2192a522a3ef"
+    },
+    "backbone/params/_METADATA": {
+      "bytes": 30250,
+      "sha256": "63f57db50d3163fbcb72cd58b6416a9b1c0e39c3bfd62456199c9095d26b4957"
+    },
+    "backbone/params/_sharding": {
+      "bytes": 22463,
+      "sha256": "a4008b2934d142fa80c8da82348f6add1bae6f8a0e0b9038ff60cdb270fc4a95"
+    },
+    "backbone/params/array_metadatas/process_0": {
+      "bytes": 11956,
+      "sha256": "5118aece1624b3c8b397f125f195ebbee5c60baefd35a5612cc9252ef3a0d33a"
+    },
+    "backbone/params/d/2d42d9e4c1689076105e62d4eb2c53e2": {
+      "bytes": 23928,
+      "sha256": "f9590509aa95b449b17c24803c11e9d1bd847c6267c9b033eeb110214e0b0f75"
+    },
+    "backbone/params/manifest.ocdbt": {
+      "bytes": 120,
+      "sha256": "77b54523c9ec1e12e7912b1a94d5b0f45aa681a16f0a2c948d7519950b99eb35"
+    },
+    "backbone/params/ocdbt.process_0/d/0500a924925f77f9351acc487c0de191": {
+      "bytes": 2872715954,
+      "sha256": "1225609422a41670cc9cf77f0f4b1c058ef9ecbb687be91c453c9b1afe219ac7"
+    },
+    "backbone/params/ocdbt.process_0/d/32a5fd8f8d2dc804459c076c7f9dbbb2": {
+      "bytes": 1328,
+      "sha256": "756539dea97b05d709155e4fbf2f69072238642167c258f1da8ff536d46c55a5"
+    },
+    "backbone/params/ocdbt.process_0/d/3819599bdb18899774fd50f69620e501": {
+      "bytes": 2471727635,
+      "sha256": "6f86e6aec1830fd093b1f58761a6d2c82fff06215000b735085b3d292469618e"
+    },
+    "backbone/params/ocdbt.process_0/d/58b20dc02897b8ebb994b2427e5aec25": {
+      "bytes": 978532615,
+      "sha256": "b0eb7958f5cfbb9b1f289aa055a49dbf7b8f4287a7e0c24d5d729186cf6eeb6e"
+    },
+    "backbone/params/ocdbt.process_0/d/8259c2a1890090affb6e110ae9946a93": {
+      "bytes": 1692302054,
+      "sha256": "aafc804c7e073eb03ebe66e5684e95a0a935720d3dfff7fee4ac4d960ac78ec1"
+    },
+    "backbone/params/ocdbt.process_0/d/97e1e0c80369a4812c4aec7f1b7d330d": {
+      "bytes": 216,
+      "sha256": "7896364bd7e726fa6d3116d667a9f3bc899e1eb1dc23b89fa50d0f772caedcc3"
+    },
+    "backbone/params/ocdbt.process_0/d/b4e208a636d5ee07e9b64c832edb99b2": {
+      "bytes": 2239981488,
+      "sha256": "0fe36d33a338c030de94aace87cc9873bc3fe197a575190d2383d99fa32741dd"
+    },
+    "backbone/params/ocdbt.process_0/d/b6f6da04408b3e2aab6aa32c4d99762e": {
+      "bytes": 2187021436,
+      "sha256": "3851122576714fc86a43f0890781e6661f8828fc55d03df6b470972099995f92"
+    },
+    "backbone/params/ocdbt.process_0/manifest.ocdbt": {
+      "bytes": 267,
+      "sha256": "b7c9351d65514fbcdcb46efb9ce097385b7a586fa2f2da8fb10474f56fcd130d"
+    },
+    "example/egg.npz": {
+      "bytes": 173925,
+      "sha256": "e5b9ea0e4bcc9497839a656234d78511a72211d586e4facddfdc3816a1af450a"
+    },
+    "forecast/contract.json": {
+      "bytes": 508,
+      "sha256": "e21382804043f80050c175c691107302110e3cf4057955eb045f44fd6c782813"
+    },
+    "forecast/normalization.npz": {
+      "bytes": 7290,
+      "sha256": "adc5388f07d4bb7c50bdb5b83de01f8ae88e3ff012e72a09d67494f8a89cf822"
+    },
+    "forecast/weights.pt": {
+      "bytes": 1700339,
+      "sha256": "1f7a9c30d4b74bcd0dfce8240547b7fe87084c69a99b0c581e4f4da817c59db8"
+    },
+    "inference/TipDex-VTLA-0.2.0.zip": {
+      "bytes": 166657,
+      "sha256": "600a666296643af7d24d569dc0b4ff86d2aa9a2ce661c2f2fb3145a1928ca801"
+    },
+    "inference/tipdex_vtla-0.2.0-py3-none-any.whl": {
+      "bytes": 133560,
+      "sha256": "9a4ca9f6170e2a7da3f32afeeecb5c2fd810da1a284dbbb079e5009da206a63e"
+    },
+    "tokenizer/paligemma_tokenizer.model": {
+      "bytes": 4264023,
+      "sha256": "8986bb4f423f07f8c7f70d0dbe3526fb2316056c17bae71b1ea975e77a168fc6"
+    }
+  },
+  "default_profile": "paper"
+}

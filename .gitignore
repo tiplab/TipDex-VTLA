@@ -1,2 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+build/
+dist/
+*.egg-info/
+bundles/
+outputs/
+*.npz
+*.pt
+*.msgpack
 *.pdf
 *.PDF

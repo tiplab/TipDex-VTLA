@@ -1,0 +1,11 @@
+{
+  "profile": "paper",
+  "visual_offset": 0.0,
+  "visual_scale": 1.0,
+  "residual_bound": 0.1,
+  "gate_kappa": 1.0,
+  "maximum_tactile_decrement": 0.1,
+  "forecast_horizon": 30,
+  "tactile_fusion": "context_concat",
+  "seed": 43
+}

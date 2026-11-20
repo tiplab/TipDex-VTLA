@@ -1,0 +1,12 @@
+{
+  "python": "3.11.15",
+  "independent_venv": true,
+  "isolated": true,
+  "imports_from_venv": true,
+  "system_site_packages": false,
+  "versions": {
+    "numpy": "1.26.4",
+    "torch": "2.7.1+cu126",
+    "jax": "0.5.3"
+  }
+}
