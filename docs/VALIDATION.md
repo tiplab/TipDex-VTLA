@@ -30,7 +30,7 @@
 
 回放使用真实模型参数和包内归档观测；执行确认由测试驱动显式构造，大误差测试使用 raw364 注入。测试不向机器人发送动作，不作为触觉精度、抓取成功率或论文实验指标。
 
-本地模型包和 Hugging Face 发布版本均已验收。公开仓库 `penguin3333333/TipDex-VTLA` 的固定发布版本已完成匿名内容校验，版本号与逐文件证据见 `validation/huggingface/remote_integrity.json`：31 个清单文件全部通过 SHA-256 校验，安装包的 63 个模块及资源文件与已测试的安装版本逐字节一致。与发布清单匹配的真实权重在 paper / tipdex 两种配置下均通过两次闭环更新、重新预测、分数下降及已提交动作保护检查。命令见 [模型发布说明](MODEL_RELEASE.md)。
+本地模型包和 Hugging Face 发布版本均已验收。公开仓库 `TipDex-VTLA/TipDex-VTLA` 的固定发布版本已完成匿名内容校验，版本号与逐文件证据见 `validation/huggingface/remote_integrity.json`：31 个清单文件全部通过 SHA-256 校验，安装包的 63 个模块及资源文件与已测试的安装版本逐字节一致。与发布清单匹配的真实权重在 paper / tipdex 两种配置下均通过两次闭环更新、重新预测、分数下降及已提交动作保护检查。命令见 [模型发布说明](MODEL_RELEASE.md)。
 
 机器可读结果位于 `validation/installed_paper/report.json`、`validation/installed_tipdex/report.json`、`validation/http_smoke.json`、`validation/environment.json` 和 `validation/installed_tests.xml`。
 

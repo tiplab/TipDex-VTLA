@@ -1,6 +1,6 @@
 # 模型包与 Hugging Face 发布
 
-已发布模型：[penguin3333333/TipDex-VTLA](https://huggingface.co/penguin3333333/TipDex-VTLA)。发布版本记录在 `validation/huggingface/remote_integrity.json`；模型包包含原始 9309、VASE、TACE、共享编码器触觉预测器，以及配套推理源码和安装包。安装与启动命令见 [README](../README.md)。
+已发布模型：[TipDex-VTLA/TipDex-VTLA](https://huggingface.co/TipDex-VTLA/TipDex-VTLA)。发布版本记录在 `validation/huggingface/remote_integrity.json`；模型包包含原始 9309、VASE、TACE、共享编码器触觉预测器，以及配套推理源码和安装包。安装与启动命令见 [README](../README.md)。
 
 权重不进入源代码仓库。完整模型包包含以下内容：
 

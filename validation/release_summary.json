@@ -33,8 +33,8 @@
   "execution_feedback": "explicitly simulated SDK acknowledgements",
   "scope": "inference functionality; no tactile accuracy or task success claims",
   "huggingface_release": {
-    "repo_id": "penguin3333333/TipDex-VTLA",
-    "revision": "69d6df9504435dfffa504a536cde181c0dc7fd10",
+    "repo_id": "TipDex-VTLA/TipDex-VTLA",
+    "revision": "583f3924803b6881194f6a6295a092f1713fd603",
     "profiles_verified": [
       "paper",
       "tipdex"

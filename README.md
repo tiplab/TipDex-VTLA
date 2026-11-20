@@ -8,8 +8,8 @@ Official inference implementation
 
 [![Project Page](https://img.shields.io/badge/Project-Page-3b82f6?style=flat)](https://tiplab.github.io/TipDex-VTLA/)
 [![Paper: arXiv](https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2611.25683)
-[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TipDex-VTLA)
-[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-Data)
+[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/TipDex-VTLA/TipDex-VTLA)
+[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data)
 [![Code License: Apache-2.0](https://img.shields.io/badge/Code_License-Apache--2.0-83a83f?style=flat)](LICENSE)
 [![Python: 3.11](https://img.shields.io/badge/Python-3.11-3776ab?style=flat&logo=python&logoColor=white)](pyproject.toml)
 
@@ -64,8 +64,8 @@ The heatmap uses SDK register order: `heatmap[r, c] = raw364[26*r + c] / 65535`.
 
 | Resource | Contents | Download |
 | --- | --- | --- |
-| **TipDex-VTLA** | Policy, VASE, TACE, shared-encoder tactile forecaster, tokenizer, normalization statistics, and an inference sample | [Hugging Face Model](https://huggingface.co/penguin3333333/TipDex-VTLA) |
-| **TipDex-Data** | 50 original trajectories and 50 paired trajectories with RGB illumination perturbations | [Hugging Face Dataset](https://huggingface.co/datasets/penguin3333333/TipDex-Data) |
+| **TipDex-VTLA** | Policy, VASE, TACE, shared-encoder tactile forecaster, tokenizer, normalization statistics, and an inference sample | [Hugging Face Model](https://huggingface.co/TipDex-VTLA/TipDex-VTLA) |
+| **TipDex-Data** | 50 original trajectories and 50 paired trajectories with RGB illumination perturbations | [Hugging Face Dataset](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data) |
 
 The model package includes an example observation for replay. Downloading the full dataset is optional for running that example. Model download and inference commands are provided in [Section 4](#4-how-to-run-locally); the dataset card describes its files and pairing metadata.
 
@@ -86,7 +86,7 @@ pip install ".[cuda]"
 ### 4.2 Download the model
 
 ```bash
-export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TipDex-VTLA"))')"
+export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="TipDex-VTLA/TipDex-VTLA"))')"
 tipdex verify --model "$MODEL_DIR"
 ```
 
@@ -140,7 +140,7 @@ VASE and TACE are separate modules under [`src/tipdex/VASE`](src/tipdex/VASE) an
 
 ## 5. License
 
-The source code is released under the [Apache License 2.0](LICENSE), with third-party components documented in [NOTICE.md](NOTICE.md). The model package includes Gemma/PaliGemma-derived parameters and the applicable [Gemma terms](https://huggingface.co/penguin3333333/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt). Refer to the [model card](https://huggingface.co/penguin3333333/TipDex-VTLA) and [dataset card](https://huggingface.co/datasets/penguin3333333/TipDex-Data) for resource-specific information.
+The source code is released under the [Apache License 2.0](LICENSE), with third-party components documented in [NOTICE.md](NOTICE.md). The model package includes Gemma/PaliGemma-derived parameters and the applicable [Gemma terms](https://huggingface.co/TipDex-VTLA/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt). Refer to the [model card](https://huggingface.co/TipDex-VTLA/TipDex-VTLA) and [dataset card](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data) for resource-specific information.
 
 We acknowledge [Physical Intelligence / OpenPI](https://github.com/Physical-Intelligence/openpi) and the upstream libraries used by this implementation.
 

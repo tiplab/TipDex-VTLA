@@ -8,8 +8,8 @@
 
 [![Project Page](https://img.shields.io/badge/Project-Page-3b82f6?style=flat)](https://tiplab.github.io/TipDex-VTLA/)
 [![Paper: arXiv](https://img.shields.io/badge/Paper-arXiv-b31b1b?style=flat&logo=arxiv)](https://arxiv.org/abs/2611.25683)
-[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/penguin3333333/TipDex-VTLA)
-[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/penguin3333333/TipDex-Data)
+[![Weights: TipDex-VTLA](https://img.shields.io/badge/Weights-TipDex--VTLA-f4cc58?style=flat&logo=huggingface)](https://huggingface.co/TipDex-VTLA/TipDex-VTLA)
+[![Dataset: TipDex-Data](https://img.shields.io/badge/Dataset-TipDex--Data-29a385?style=flat&logo=huggingface)](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data)
 [![Code License: Apache-2.0](https://img.shields.io/badge/Code_License-Apache--2.0-83a83f?style=flat)](LICENSE)
 [![Python: 3.11](https://img.shields.io/badge/Python-3.11-3776ab?style=flat&logo=python&logoColor=white)](pyproject.toml)
 
@@ -64,8 +64,8 @@
 
 | 资源 | 内容 | 下载 |
 | --- | --- | --- |
-| **TipDex-VTLA** | 策略、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化统计与推理样例 | [Hugging Face 模型](https://huggingface.co/penguin3333333/TipDex-VTLA) |
-| **TipDex-Data** | 50 条原始轨迹和 50 条配对 RGB 光照扰动轨迹 | [Hugging Face 数据集](https://huggingface.co/datasets/penguin3333333/TipDex-Data) |
+| **TipDex-VTLA** | 策略、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化统计与推理样例 | [Hugging Face 模型](https://huggingface.co/TipDex-VTLA/TipDex-VTLA) |
+| **TipDex-Data** | 50 条原始轨迹和 50 条配对 RGB 光照扰动轨迹 | [Hugging Face 数据集](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data) |
 
 模型包已包含回放观测样例，运行该示例无须下载完整数据集。模型下载与推理命令见[第 4 节](#4-本地运行)，数据文件与配对元数据说明见数据集页面。
 
@@ -86,7 +86,7 @@ pip install ".[cuda]"
 ### 4.2 下载模型
 
 ```bash
-export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="penguin3333333/TipDex-VTLA"))')"
+export MODEL_DIR="$(python -c 'from huggingface_hub import snapshot_download; print(snapshot_download(repo_id="TipDex-VTLA/TipDex-VTLA"))')"
 tipdex verify --model "$MODEL_DIR"
 ```
 
@@ -140,7 +140,7 @@ VASE、TACE 分别位于独立目录 [`src/tipdex/VASE`](src/tipdex/VASE) 和 [`
 
 ## 5. 许可
 
-源代码采用 [Apache-2.0](LICENSE) 许可，第三方组件说明见 [NOTICE.md](NOTICE.md)。模型包包含 Gemma/PaliGemma 派生参数，使用时适用随包发布的 [Gemma 条款](https://huggingface.co/penguin3333333/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt)。具体资源信息见[模型卡](https://huggingface.co/penguin3333333/TipDex-VTLA)与[数据集卡](https://huggingface.co/datasets/penguin3333333/TipDex-Data)。
+源代码采用 [Apache-2.0](LICENSE) 许可，第三方组件说明见 [NOTICE.md](NOTICE.md)。模型包包含 Gemma/PaliGemma 派生参数，使用时适用随包发布的 [Gemma 条款](https://huggingface.co/TipDex-VTLA/TipDex-VTLA/blob/main/LICENSE_GEMMA.txt)。具体资源信息见[模型卡](https://huggingface.co/TipDex-VTLA/TipDex-VTLA)与[数据集卡](https://huggingface.co/datasets/TipDex-VTLA/TipDex-Data)。
 
 感谢 [Physical Intelligence / OpenPI](https://github.com/Physical-Intelligence/openpi) 及本项目使用的上游开源库。
 

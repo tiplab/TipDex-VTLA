@@ -21,12 +21,12 @@
       "bytes": 655
     },
     "README.md": {
-      "sha256": "dff3d0d022c80c2137674e58e5936a7800419f7a593999422a3a68543e32582d",
-      "bytes": 9097
+      "sha256": "219353348e0e66202f3e4ec3a3726d2ba3e060f1f7b1bdfb6611af654fb0a987",
+      "bytes": 9073
     },
     "README_zh-CN.md": {
-      "sha256": "0ae395b0d7b7dca78879e16928c0a639666bcc749d4a53b5e6c236f998d744b0",
-      "bytes": 8125
+      "sha256": "a5490dd64a32e0a9e5c8fa383be33f35762f96dd50f3fdad1c664191bbb16872",
+      "bytes": 8101
     },
     "configs/paper.json": {
       "sha256": "347e96074b0a6c08c43b5d514478b664a8bdbcd0482a41ce10ab853bb302b3f2",
@@ -53,16 +53,16 @@
       "bytes": 5937
     },
     "docs/MODEL_RELEASE.md": {
-      "sha256": "6e84d1f3a5cc6f975046c2305ef1eababf8b8d89341fb0bcf0450fbb02ae04a5",
-      "bytes": 2176
+      "sha256": "9787f590c025080bac40050b8c80bb32ff67461adfd372ab829965b6d1feb1fe",
+      "bytes": 2170
     },
     "docs/TACTILE_REPRESENTATION.md": {
       "sha256": "88e6401566569d4cdb811b6e801e68fda14832d4dee4b4a3639d687a7b15586c",
       "bytes": 148
     },
     "docs/VALIDATION.md": {
-      "sha256": "84c502ae137599b7d6f3a972589440109cac4b01e96dc4a7e6703798911c762f",
-      "bytes": 3011
+      "sha256": "59cc71562cefd4e79cda686896fe6c9878295d7e5a4d725f4cd7ff39ad882826",
+      "bytes": 3008
     },
     "docs/app.js": {
       "sha256": "00c87fd5bfa1171ba0f7f0e6a8d6da818b4f1da17027b792b3a9d8ab7374cfe0",
@@ -81,8 +81,8 @@
       "bytes": 205
     },
     "docs/index.html": {
-      "sha256": "d2cd29d05f1e594772f427c7fffc4f263a10bb6f8b9ab5cbbf0f67c55902ee7c",
-      "bytes": 17739
+      "sha256": "ad91a8b92fe77630c5e32b48302a6efd106aa05b692ba0ea50c36d9445b6f8ef",
+      "bytes": 17736
     },
     "docs/research.css": {
       "sha256": "8fb667961f0bbd312a28a12399442769072def626c7e0e75ad93cc3b15cf4878",

@@ -1,0 +1,32 @@
+{
+  "account_namespace": "TipDex-VTLA",
+  "model": {
+    "repo_id": "TipDex-VTLA/TipDex-VTLA",
+    "repo_type": "model",
+    "revision": "583f3924803b6881194f6a6295a092f1713fd603",
+    "changed_files": [
+      "README.md",
+      "manifest.json",
+      "inference/TipDex-VTLA-0.2.1.zip",
+      "inference/tipdex_vtla-0.2.1-py3-none-any.whl"
+    ],
+    "content_files_unchanged": 29,
+    "namespace": "TipDex-VTLA",
+    "commit_message": "TipDex-V1"
+  },
+  "dataset": {
+    "repo_id": "TipDex-VTLA/TipDex-Data",
+    "repo_type": "dataset",
+    "revision": "25e06a1bbc9621bd9f4f8f796467a0911564c8f9",
+    "changed_files": [
+      "README.md",
+      "code/independent_qa.py",
+      "provenance/sha256_manifest.json"
+    ],
+    "content_files_unchanged": 614,
+    "namespace": "TipDex-VTLA",
+    "commit_message": "TipDex-V1"
+  },
+  "anonymous_access_verified": true,
+  "runtime_module_files_unchanged": 63
+}

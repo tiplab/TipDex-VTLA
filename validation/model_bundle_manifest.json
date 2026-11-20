@@ -12,8 +12,8 @@
       "sha256": "3e2c24001f9ef57bf7ec959a3658fbb49cdad113cdf394c264da9d16f9bdd132"
     },
     "README.md": {
-      "bytes": 3782,
-      "sha256": "d8036a9ec81b39ab9e281d44ff82bad874bbe5b1306c0db3c7de6770cf8792ac"
+      "bytes": 3776,
+      "sha256": "a145aaf73d2069d0f16bef3aa25338569db2841d49ca3aa9adc6c9a5e772b45e"
     },
     "TACE/config.json": {
       "bytes": 489,
@@ -116,12 +116,12 @@
       "sha256": "1f7a9c30d4b74bcd0dfce8240547b7fe87084c69a99b0c581e4f4da817c59db8"
     },
     "inference/TipDex-VTLA-0.2.1.zip": {
-      "bytes": 7768698,
-      "sha256": "0c4f4ea9dbf0c7827a3a4a31c5f155046a67819632bbf212c48134a073a1eb6e"
+      "bytes": 7768688,
+      "sha256": "dee2c109aacd82dd957a935ff6fd34853728c50302505cb541ead04d5c9981d9"
     },
     "inference/tipdex_vtla-0.2.1-py3-none-any.whl": {
-      "bytes": 134819,
-      "sha256": "84ef5a8fd827e36b3d4d79c00c74c7b4afa912a3f7c938157e153f0b10a0d745"
+      "bytes": 134812,
+      "sha256": "5bb516929060801f9bca5f59531047f466b2d2b447a330c4490d8e3cc1ec8369"
     },
     "tokenizer/paligemma_tokenizer.model": {
       "bytes": 4264023,

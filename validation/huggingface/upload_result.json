@@ -1,7 +1,14 @@
 {
-  "repo_id": "penguin3333333/TipDex-VTLA",
-  "revision": "69d6df9504435dfffa504a536cde181c0dc7fd10",
-  "renamed": true,
-  "parameter_and_component_files_unchanged": 22,
-  "files": 33
+  "repo_id": "TipDex-VTLA/TipDex-VTLA",
+  "repo_type": "model",
+  "revision": "583f3924803b6881194f6a6295a092f1713fd603",
+  "changed_files": [
+    "README.md",
+    "manifest.json",
+    "inference/TipDex-VTLA-0.2.1.zip",
+    "inference/tipdex_vtla-0.2.1-py3-none-any.whl"
+  ],
+  "content_files_unchanged": 29,
+  "namespace": "TipDex-VTLA",
+  "commit_message": "TipDex-V1"
 }
