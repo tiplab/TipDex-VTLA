@@ -1,6 +1,6 @@
 # TipDex-VTLA: Learning When to Refine Actions with Touch for Dexterous Manipulation
 
-[**Project Page**](https://tiplab.github.io/TipDex-VTLA/) · **Paper:** 正在加工 · [**Code**](https://github.com/tiplab/TipDex-VTLA) · **Checkpoints:** 正在加工
+[**Project Page**](https://tiplab.github.io/TipDex-VTLA/) · **Paper:** Coming soon · [**Code**](https://github.com/tiplab/TipDex-VTLA) · **Checkpoints:** Coming soon
 
 **TipDex-VTLA** is a vision, tactile, language, and action model for dexterous manipulation. It estimates when changes in lighting make visual guidance unreliable and verifies predicted contact against tactile measurements. The two signals guide corrections to actions the robot has yet to execute.
 

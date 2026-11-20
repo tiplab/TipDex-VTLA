@@ -27,6 +27,8 @@
 }
 .paper-hero .tagline { color: #4e665f; }
 .paper-hero .resources { margin-bottom: clamp(24px, 4vw, 38px); }
+.author-note-mark { margin-left: .15em; font-weight: 700; line-height: 0; }
+.equal-note { display: flex; flex-wrap: wrap; justify-content: center; column-gap: 1.2em; }
 .paper-hero .pill.primary { background: #185f50; border-color: #185f50; font-weight: 650; }
 .paper-hero .pill.primary:hover { background: #114a3e; }
 .paper-hero .resource-pending:disabled { cursor: default; opacity: 1; color: #364943; background: #f5f8f7; border-color: #dce5e1; }

@@ -4,7 +4,18 @@
   const el = id => document.getElementById(id);
   el('abstract-text').textContent = p.abstract;
   el('bibtex').textContent = p.bibtex;
-  p.authors.forEach(author => { const span = document.createElement('span'); span.textContent = author; el('authors').append(span); });
+  p.authors.forEach(({ name, role }) => {
+    const author = document.createElement('span');
+    author.textContent = name;
+    if (role) {
+      const marker = document.createElement('sup');
+      marker.className = 'author-note-mark';
+      marker.textContent = role === 'corresponding' ? '*' : '#';
+      marker.title = role === 'corresponding' ? 'Corresponding author' : 'Equal contribution';
+      author.append(marker);
+    }
+    el('authors').append(author);
+  });
   const isOurs = label => label === p.name || label === 'Full ' + p.name;
   function resultRow([label, ...values]) {
     const row = document.createElement('tr');

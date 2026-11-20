@@ -18,7 +18,7 @@
   function player(item) {
     const video = make('video', 'demo-video');
     video.controls = true; video.playsInline = true; video.preload = 'none';
-    video.setAttribute('aria-label', item.title + '演示视频');
+    video.setAttribute('aria-label', item.title + ' demo video');
     if (url(item.poster)) video.poster = url(item.poster);
     return video;
   }
@@ -28,17 +28,17 @@
     const error = make('div', 'demo-playback-error');
     error.setAttribute('role', 'status');
     error.append(make('p', '', message));
-    const retry = make('button', '', '重新加载'); retry.type = 'button';
-    retry.onclick = () => { error.remove(); video.load(); video.play().catch(() => showError(video, '无法播放，请检查视频路径或稍后重试。')); };
+    const retry = make('button', '', 'Retry'); retry.type = 'button';
+    retry.onclick = () => { error.remove(); video.load(); video.play().catch(() => showError(video, 'The video could not play. Please try again later.')); };
     error.append(retry); parent.append(error);
   }
   function watchErrors(video) {
-    video.addEventListener('error', () => showError(video, '视频暂时无法播放，请重试。'));
+    video.addEventListener('error', () => showError(video, 'The video is unavailable. Please try again.'));
   }
   async function start(video, item) {
     if (!video.getAttribute('src')) video.src = url(item.src);
     try { await video.play(); }
-    catch (error) { if (error.name !== 'AbortError') showError(video, '视频未能开始播放，请重试。'); }
+    catch (error) { if (error.name !== 'AbortError') showError(video, 'Playback could not start. Please try again.'); }
   }
   function enlarge(item) {
     document.querySelectorAll('video').forEach(video => video.pause());
@@ -57,8 +57,8 @@
   function render(items, id, kind) {
     const target = document.getElementById(id); target.replaceChildren();
     const labels = {
-      real: ['实物', 'REAL WORLD'],
-      simulation: ['仿真', 'SIMULATION']
+      real: ['Real world', 'REAL WORLD'],
+      simulation: ['Simulation', 'SIMULATION']
     }[kind];
     items.forEach((item, index) => {
       const card = make('article', 'demo-card' + (!url(item.src) ? ' coming-card' : ''));
@@ -67,7 +67,7 @@
       if (url(item.src)) {
         const video = player(item); watchErrors(video); video.controls = false;
         const play = make('button', 'demo-play'); play.type = 'button';
-        play.setAttribute('aria-label', '播放' + item.title); play.innerHTML = '<span class="demo-play-circle">' + svgPlay + '</span><span class="demo-play-label">播放演示</span>';
+        play.setAttribute('aria-label', 'Play ' + item.title); play.innerHTML = '<span class="demo-play-circle">' + svgPlay + '</span><span class="demo-play-label">Play demo</span>';
         play.onclick = () => start(video, item);
         video.addEventListener('play', () => { play.hidden = true; number.hidden = true; video.controls = true; });
         video.addEventListener('ended', () => { play.hidden = false; number.hidden = false; video.controls = false; });
@@ -75,23 +75,23 @@
         if (item.duration) stage.append(make('span', 'demo-duration', item.duration));
       } else {
         stage.classList.add('coming-stage');
-        stage.innerHTML = '<div class="coming-art" aria-hidden="true"><span class="bean bean-one"></span><span class="bean bean-two"></span><span class="bean bean-three"></span><span class="bean bean-four"></span><span class="bean-bowl"></span></div><span class="coming-label">COMING SOON</span><p>下一段演示，敬请期待。</p>';
+        stage.innerHTML = '<div class="coming-art" aria-hidden="true"><span class="bean bean-one"></span><span class="bean bean-two"></span><span class="bean bean-three"></span><span class="bean bean-four"></span><span class="bean-bowl"></span></div><span class="coming-label">COMING SOON</span><p>A demo video is on the way.</p>';
         stage.append(number);
       }
       const info = make('div', 'demo-info');
       const heading = make('div', 'demo-title-row');
       const title = make('h3', '', item.title); heading.append(title);
-      heading.append(make('span', 'demo-kind', url(item.src) ? labels[0] : '待更新'));
+      heading.append(make('span', 'demo-kind', url(item.src) ? labels[0] : 'Coming soon'));
       info.append(heading, make('p', 'demo-task', item.task), make('p', 'demo-description', item.caption));
       const footer = make('div', 'demo-card-footer');
       footer.append(make('span', '', item.speed ? `${labels[1]} · ${item.speed}` : labels[1]));
       if (url(item.src)) {
         const expand = make('button', 'demo-expand', ''); expand.type = 'button';
-        expand.innerHTML = svgExpand + '<span>放大查看</span>';
-        expand.setAttribute('aria-label', '放大查看' + item.title);
+        expand.innerHTML = svgExpand + '<span>Enlarge</span>';
+        expand.setAttribute('aria-label', 'Enlarge ' + item.title);
         expand.onclick = () => enlarge(item);
         footer.append(expand);
-      } else footer.append(make('span', 'coming-status', '视频准备中'));
+      } else footer.append(make('span', 'coming-status', 'Video pending'));
       info.append(footer); card.append(stage, info); target.append(card);
     });
   }
@@ -128,7 +128,7 @@
 
       const meta = make('div', 'lighting-meta');
       const details = make('div', 'lighting-details');
-      details.append(make('p', 'lighting-condition', `${clip.condition} / ${clip.label}`), make('h3', '', clip.title), make('p', 'lighting-timing', `${clip.duration} · ${clip.speed} playback · 4 views`));
+      details.append(make('p', 'lighting-condition', clip.condition), make('h3', '', clip.title), make('p', 'lighting-timing', `${clip.duration} · ${clip.speed} playback · 4 views`));
       const expand = make('button', 'lighting-expand'); expand.type = 'button';
       expand.innerHTML = svgExpand + '<span>Enlarge</span>';
       expand.setAttribute('aria-label', `Enlarge ${item.title}`); expand.onclick = () => enlarge(item);

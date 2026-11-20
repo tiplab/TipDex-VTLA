@@ -17,10 +17,10 @@
   <title>TipDex-VTLA · Learning When to Refine Actions with Touch</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="research.css?v=tiplab-release">
-  <script defer src="content.js?v=lighting-four-tasks"></script>
-  <script defer src="app.js?v=20261118"></script>
-  <script defer src="demos.js?v=lighting-four-tasks"></script>
+  <link rel="stylesheet" href="research.css?v=english-authors">
+  <script defer src="content.js?v=english-authors"></script>
+  <script defer src="app.js?v=english-authors"></script>
+  <script defer src="demos.js?v=english-authors"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -34,11 +34,11 @@
       <h1><span class="gradient">TipDex-VTLA</span><br><span class="paper-title">Learning When to Refine Actions<br class="desktop-break"> with Touch for Dexterous Manipulation</span></h1>
       <p class="tagline">When lighting changes, let verified touch guide the next action.</p>
       <div class="authors" id="authors"></div>
-      <p class="note equal-note">* Equal contribution</p>
+      <p class="note equal-note"><span><sup>#</sup> Equal contribution.</span> <span><sup>*</sup> Corresponding author.</span></p>
       <div class="resources" aria-label="Project resources">
-        <button class="pill resource-pending" type="button" disabled>Paper <span lang="zh-CN">正在加工</span></button>
+        <button class="pill resource-pending" type="button" disabled>Paper <span>Coming soon</span></button>
         <a class="pill primary" href="https://github.com/tiplab/TipDex-VTLA" target="_blank" rel="noopener">Code ↗</a>
-        <button class="pill resource-pending" type="button" disabled>Checkpoints <span lang="zh-CN">正在加工</span></button>
+        <button class="pill resource-pending" type="button" disabled>Checkpoints <span>Coming soon</span></button>
       </div>
       <div class="paper-stats" aria-label="Average full-task success">
         <div><strong>87.5<span>%</span></strong><p>Standard lighting</p><small>4 real-world tasks</small></div>
@@ -56,7 +56,7 @@
     <div class="lighting-band">
       <section class="wrap lighting-section" id="lighting" aria-labelledby="lighting-title">
         <div class="lighting-header">
-          <div><div class="section-kicker">01 / REAL-WORLD LIGHTING DEMOS</div><h2 id="lighting-title">When the light changes.<span>灯光干扰实验</span></h2></div>
+          <div><div class="section-kicker">01 / REAL-WORLD LIGHTING DEMOS</div><h2 id="lighting-title">When the light changes.</h2></div>
           <p>Ten recordings across four tasks. Filter by task to compare light changes with synchronized camera views and tactile heatmaps.</p>
         </div>
         <div id="lighting-gallery"></div>
@@ -72,14 +72,14 @@
 
     <section class="wrap abstract-section" id="abstract">
       <div class="section-kicker">02 / THE BIG PICTURE</div>
-      <h2>What happens when vision becomes unreliable?<span>研究摘要</span></h2>
+      <h2>What happens when vision becomes unreliable?</h2>
       <p id="abstract-text" class="abstract-text"></p>
     </section>
 
     <div class="soft-band">
       <section class="wrap" id="overview">
         <div class="section-kicker">03 / HOW IT WORKS</div>
-        <h2>Refine the actions that remain.<span>方法概览</span></h2>
+        <h2>Refine the actions that remain.</h2>
         <p class="section-intro">A 2 Hz vision–language branch caches context and starts the action flow. A 30 Hz branch uses current touch to resume the flow and refine only replaceable actions that have yet to execute.</p>
         <figure class="paper-figure">
           <button class="figure-button" data-figure="assets/paper/architecture-v2.webp" data-caption="Slow and fast branches with delayed tactile verification and gated feature correction" aria-label="Enlarge model architecture">
@@ -111,7 +111,7 @@
     </div>
 
     <section class="wrap demo-section" id="video">
-      <div class="section-header"><div><div class="section-kicker">04 / REAL-WORLD EXPERIMENTS</div><h2>Four tasks, four kinds of contact.<span>实物实验</span></h2></div><span class="demo-count"><i></i> 4 task demos</span></div>
+      <div class="section-header"><div><div class="section-kicker">04 / REAL-WORLD EXPERIMENTS</div><h2>Four tasks, four kinds of contact.</h2></div><span class="demo-count"><i></i> 4 task demos</span></div>
       <p class="demo-intro">From a fragile egg to loose grains, the robot handles objects that demand different kinds of touch.</p>
       <div id="real-demos" class="demo-grid real-grid"></div>
       <details class="sequence-details"><summary>View the four tasks step by step <span aria-hidden="true">＋</span></summary>
@@ -126,14 +126,14 @@
 
     <div class="simulation-band">
       <section class="wrap demo-section" id="simulation">
-        <div class="section-header"><div><div class="section-kicker">05 / SIMULATION</div><h2>Eight tasks in UniVTAC.<span>仿真任务</span></h2></div><span class="demo-count"><i></i> Optical tactile sensing</span></div>
+        <div class="section-header"><div><div class="section-kicker">05 / SIMULATION</div><h2>Eight tasks in UniVTAC.</h2></div><span class="demo-count"><i></i> Optical tactile sensing</span></div>
         <p class="demo-intro">In simulation, TipDex-VTLA uses the UniVTAC optical tactile encoder with both VASE and TACE enabled. TACE verifies predicted tactile images against time-aligned measurements.</p>
         <div id="simulation-demos" class="demo-grid simulation-grid"></div>
       </section>
     </div>
 
     <section class="wrap results-section" id="results">
-      <div class="section-kicker">06 / EVALUATION</div><h2>Measured across tasks and lighting.<span>实验结果</span></h2>
+      <div class="section-kicker">06 / EVALUATION</div><h2>Measured across tasks and lighting.</h2>
       <p class="section-intro">Each real-world method ran 20 trials per task under standard lighting and 20 under unseen lighting. The unseen set includes 10 combinations of asymmetric light and color temperature, five low-light settings and five bright-light settings.</p>
       <div class="result-heading"><h3>Real-world full-task success</h3><div class="result-switch" role="group" aria-label="Lighting condition for real-world results"><button type="button" data-lighting="standard" aria-pressed="false">Standard lighting</button><button type="button" data-lighting="unseen" aria-pressed="true">Unseen lighting</button></div></div>
       <div class="results-panel">
@@ -167,7 +167,7 @@
     </section>
 
     <div class="soft-band citation-band"><section class="wrap" id="citation">
-      <div class="section-header"><div><div class="section-kicker">07 / REFERENCE</div><h2>Citation<span>引用</span></h2></div><button id="copy-citation" class="copy-button" type="button">Copy BibTeX ⧉</button></div>
+      <div class="section-header"><div><div class="section-kicker">07 / REFERENCE</div><h2>Citation</h2></div><button id="copy-citation" class="copy-button" type="button">Copy BibTeX ⧉</button></div>
       <pre><code id="bibtex"></code></pre><p class="note">Unpublished manuscript. Bibliographic details may change as the draft is revised.</p><p id="feedback" role="status"></p>
     </section></div>
   </main>
