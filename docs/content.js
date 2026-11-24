@@ -12,10 +12,7 @@ window.PROJECT = {
   ],
   "abstract": "A change in lighting can shift a robot’s predicted actions even when the object and contact state stay the same. TipDex-VTLA addresses this during execution. Visual Action Sensitivity Estimation (VASE) learns to predict how reliable the visual input is for action by measuring a frozen policy’s sensitivity to lighting changes. Tactile Anticipation and Correction during Execution (TACE) checks time-aligned touch forecasts against measurements and uses the discrepancy, together with visual reliability, to gate bounded corrections to actions that have yet to execute. Across four physical tasks, TipDex-VTLA averages 87.5% full-task success under standard lighting and 73.8% under unseen lighting. With both modules enabled, the optical-tactile adaptation achieves 84.9% mean success on eight UniVTAC tasks.",
   "lightingDemos": [
-    {"id": "egg-light-drop", "title": "Egg Transfer", "condition": "Lights dim mid-task", "duration": "00:29", "speed": "1.5×"},
     {"id": "egg-color-shift", "title": "Egg Transfer", "condition": "Changing colored light", "duration": "00:43", "speed": "1×", "warning": "This clip contains flashing lights."},
-    {"id": "grape-light-drop", "title": "Grape Pinching", "condition": "Lights dim mid-task", "duration": "00:23", "speed": "1.5×"},
-    {"id": "grape-color-shift", "title": "Grape Pinching", "condition": "Changing colored light", "duration": "00:35", "speed": "1×", "warning": "This clip contains flashing lights."},
     {"id": "tissue-side", "title": "Tissue Extraction", "condition": "Side lighting", "duration": "00:31", "speed": "3×"},
     {"id": "tissue-bright", "title": "Tissue Extraction", "condition": "Bright light", "duration": "00:31", "speed": "3×"},
     {"id": "beans-low", "title": "Mung Bean Pouring", "condition": "Low light", "duration": "00:49", "speed": "3×"},
