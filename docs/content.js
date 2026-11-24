@@ -14,8 +14,8 @@ window.PROJECT = {
   "lightingDemos": [
     {"id": "egg-light-drop-tactile-v2", "title": "Egg Transfer", "condition": "Lights dim mid-task", "duration": "00:29", "speed": "1.5×", "tactileNote": "The tactile heatmap comes from a separate egg transfer trial and is not synchronized with these camera views."},
     {"id": "egg-color-shift", "title": "Egg Transfer", "condition": "Changing colored light", "duration": "00:43", "speed": "1×", "warning": "This clip contains flashing lights."},
-    {"id": "grape-light-drop-tactile-v2", "title": "Grape Pinching", "condition": "Lights dim mid-task", "duration": "00:23", "speed": "1.5×", "tactileNote": "A separate tactile press test plays in the lower-right panel at 00:12. It is not synchronized with the camera views."},
-    {"id": "grape-color-shift-tactile-v2", "title": "Grape Pinching", "condition": "Changing colored light", "duration": "00:35", "speed": "1×", "warning": "This clip contains flashing lights.", "tactileNote": "A separate tactile press test plays in the lower-right panel at 00:19. It is not synchronized with the camera views."},
+    {"id": "grape-light-drop-tactile-v3", "title": "Grape Pinching", "condition": "Lights dim mid-task", "duration": "00:23", "speed": "1.5×", "tactileNote": "Heatmap from a separate grape pinching recording, edited to match the grasp and release shown here."},
+    {"id": "grape-color-shift-tactile-v3", "title": "Grape Pinching", "condition": "Changing colored light", "duration": "00:35", "speed": "1×", "warning": "This clip contains flashing lights.", "tactileNote": "Heatmap from a separate grape pinching recording, edited to match the grasp and release shown here."},
     {"id": "tissue-side", "title": "Tissue Extraction", "condition": "Side lighting", "duration": "00:31", "speed": "3×"},
     {"id": "tissue-bright", "title": "Tissue Extraction", "condition": "Bright light", "duration": "00:31", "speed": "3×"},
     {"id": "beans-low", "title": "Mung Bean Pouring", "condition": "Low light", "duration": "00:49", "speed": "3×"},
