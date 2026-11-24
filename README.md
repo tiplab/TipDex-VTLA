@@ -51,7 +51,7 @@ This repository provides the official inference example, including model loading
 
 | TipDex-VTLA component | Description |
 | --- | --- |
-| Policy | Egg-transfer backbone, checkpoint 9309 |
+| Policy | TipDex-VTLA Base (egg-transfer policy) |
 | Reliability | Independent VASE and TACE modules |
 | Inputs | Three RGB views, a language instruction, 19-dimensional robot state, and F1 tactile history |
 | Actions | 30-step chunks with 13 joint targets per step: 7 arm joints and 6 hand joints |

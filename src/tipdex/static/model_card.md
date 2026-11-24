@@ -12,7 +12,7 @@ license_link: LICENSE_GEMMA.txt
 ---
 # TipDex-VTLA
 
-用于 TipDex_VTLA 官方推理示例的完整模型包，包含 9309 原生 Orbax 基座参数、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化参数与回放样例。
+用于 TipDex_VTLA 官方推理示例的完整模型包，包含 TipDex-VTLA 基础策略参数（原生 Orbax 格式）、VASE、TACE、共享编码器触觉预测器、tokenizer、归一化参数与回放样例。
 
 安装推理代码后：
 
