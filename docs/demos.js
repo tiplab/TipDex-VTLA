@@ -45,14 +45,24 @@
     document.getElementById('demo-dialog-title').textContent = item.title;
     const stage = make('div', 'demo-modal-stage');
     const video = player(item); watchErrors(video); stage.append(video);
-    dialogPlayer.replaceChildren(stage); dialog.showModal();
+    dialogPlayer.replaceChildren(stage);
+    const descriptions = [];
+    if (item.tactileNote) {
+      const note = make('p', 'demo-tactile-note', item.tactileNote);
+      note.id = 'modal-tactile-note';
+      dialogPlayer.append(note);
+      descriptions.push(note.id);
+    }
     if (item.warning) {
       const warning = make('p', 'modal-warning', item.warning);
       warning.id = 'modal-video-warning';
       dialogPlayer.prepend(warning);
-      video.setAttribute('aria-describedby', warning.id);
-      video.src = url(item.src);
-    } else start(video, item);
+      descriptions.unshift(warning.id);
+    }
+    if (descriptions.length) video.setAttribute('aria-describedby', descriptions.join(' '));
+    dialog.showModal();
+    if (item.warning) video.src = url(item.src);
+    else start(video, item);
   }
   function render(items, id, kind) {
     const target = document.getElementById(id); target.replaceChildren();
@@ -134,13 +144,19 @@
       expand.setAttribute('aria-label', `Enlarge ${item.title}`); expand.onclick = () => enlarge(item);
       meta.append(details, expand);
       panel.replaceChildren(stage, meta);
+      if (clip.tactileNote) {
+        const note = make('p', 'demo-tactile-note', clip.tactileNote);
+        note.id = 'lighting-tactile-note';
+        panel.append(note);
+        video.setAttribute('aria-describedby', note.id);
+      }
       if (clip.warning) {
         const warning = make('p', 'lighting-warning', clip.warning); warning.id = 'lighting-video-warning';
         panel.prepend(warning);
         play.setAttribute('aria-describedby', warning.id);
         expand.setAttribute('aria-describedby', warning.id);
       }
-      live.textContent = `${item.title} selected. ${clip.warning || ''}`;
+      live.textContent = [`${item.title} selected.`, clip.warning, clip.tactileNote].filter(Boolean).join(' ');
     }
 
     clips.forEach((clip, index) => {
